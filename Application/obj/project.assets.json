@@ -459,6 +459,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
           "Dapper": "2.1.28",
           "Microsoft.Data.Sqlite": "8.0.7",
           "Microsoft.Extensions.Configuration.Binder": "8.0.1",

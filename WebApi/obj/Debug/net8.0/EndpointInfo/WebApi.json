@@ -87,6 +87,10 @@
       "UserRegistrationDto": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -103,7 +107,7 @@
             "type": "string",
             "nullable": true
           },
-          "password": {
+          "passwordHash": {
             "type": "string",
             "nullable": true
           }

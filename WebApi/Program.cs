@@ -9,7 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 //builder.Services.AddSingleton(new ApplicationDbContexxt(configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddSingleton<ApplicationDbContext>();
+builder.Services.AddScoped<ApplicationDbContext>();
+builder.Services.AddScoped<DatabaseInitializer>();
 
 builder.Services.AddControllersWithViews().AddJsonOptions(options =>
 {
@@ -51,5 +52,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope()) 
+{
+    var dbInitializer = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
+    dbInitializer.InitializeDatabase();
+}
 
 app.Run();

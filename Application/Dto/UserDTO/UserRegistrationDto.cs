@@ -13,7 +13,7 @@ namespace Application.Dto.UserDTO;
 public class UserRegistrationDto 
 {
 
-   // public Guid Id { get; set; }
+    public Guid Id { get; set; }
 
     public string Name { get; set; }
 
@@ -23,7 +23,7 @@ public class UserRegistrationDto
 
     public string? Role { get; set; } = Enum.GetName(typeof(Role), Domain.Enums.Role.None);
 
-    public string? Password { get; set; } = default!;
+    public string? PasswordHash { get; set; } = default!;
 
 }
 
@@ -32,13 +32,12 @@ public class UserDtoProfile : Profile
     public UserDtoProfile()
     {
         CreateMap<UserRegistrationDto, User>()
-          // .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+           .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
            .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))
            .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role))
-           .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
-           .ForMember(dest => dest.PasswordHash, opt => opt.Ignore());
+           .ForMember(dest => dest.PasswordHash, opt => opt.MapFrom(src => src.PasswordHash));
     }
 }
 

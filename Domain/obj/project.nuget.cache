@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "BYC3gRsctfE=",
+  "dgSpecHash": "Essp1YNpq1A=",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\PC\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\dapper\\2.1.28\\dapper.2.1.28.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.data.sqlite\\8.0.7\\microsoft.data.sqlite.8.0.7.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.data.sqlite.core\\8.0.7\\microsoft.data.sqlite.core.8.0.7.nupkg.sha512",

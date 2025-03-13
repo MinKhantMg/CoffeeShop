@@ -14,7 +14,7 @@ using Application.Dto.UserDTO;
 
 namespace Application.Logic.UserService
 {
-    public class UserService : IUserService, IScope
+    public class UserService : IUserService
     {
         private readonly IUnit _unit;
         private readonly IGenericRepository<User, string> _genericRepository;
@@ -46,15 +46,12 @@ namespace Application.Logic.UserService
                     return -1;
                 }
 
-                var userId = Guid.NewGuid().ToString().ToUpper();
-                var user = new User();
-                 user = _mapper.Map<User>(userRegistrationDto);
-              //  user.Id = userId;
-                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(userRegistrationDto.Password);
+                var user = _mapper.Map<User>(userRegistrationDto);
+                user.Id = Guid.NewGuid().ToString().ToUpper();
+
+                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(userRegistrationDto.PasswordHash);
 
                 int result = await _genericRepository.Add(user);
-
-                Console.WriteLine($"User registered successfully with ID: {user.Id}");
 
                 return result;
             }

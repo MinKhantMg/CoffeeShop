@@ -19,7 +19,9 @@ namespace Infrastructure.Repository
 
         public async Task<User> FindByEmailAsync(string email)
         {
-            string query = "SELECT * FROM Users WHERE LOWER(Email) = @Email LIMIT 1";
+           // string query = $"SELECT {ALL_COLUMNS_PROPERTY} FROM {TABLE_NAME} WHERE {KEY_COLUMN} = @{KEY_PROPERTY} LIMIT 1";
+
+            string query = $"SELECT * FROM {TABLE_NAME} WHERE LOWER(Email) = @Email LIMIT 1";
 
             return await _connection.QueryFirstOrDefaultAsync<User>(query, new { Email = email.ToLower() });
         }
