@@ -19,11 +19,26 @@ namespace Infrastructure.Repository
 
         public async Task<User> FindByEmailAsync(string email)
         {
-           // string query = $"SELECT {ALL_COLUMNS_PROPERTY} FROM {TABLE_NAME} WHERE {KEY_COLUMN} = @{KEY_PROPERTY} LIMIT 1";
 
             string query = $"SELECT * FROM {TABLE_NAME} WHERE LOWER(Email) = @Email LIMIT 1";
 
             return await _connection.QueryFirstOrDefaultAsync<User>(query, new { Email = email.ToLower() });
+        }
+
+        public async Task<User> GetUserByRefreshToken(string refreshToken)
+        {
+            string query = $"SELECT * FROM {TABLE_NAME} WHERE refresh_token = @RefreshToken";
+
+            return await _connection.QueryFirstOrDefaultAsync<User>(query, new { RefreshToken = refreshToken });
+        }
+
+        public async Task<bool> UpdateRefreshToken(string userId, string refreshToken, DateTime expiryDate)
+        {
+            string query = $"UPDATE {TABLE_NAME} SET RefreshToken = @RefreshToken, RefreshTokenExpiry = @ExpiryDate WHERE id = @UserId";
+
+            int rowAffected = await _connection.ExecuteAsync(query, new { RefreshToken = refreshToken, ExpiryDate = expiryDate, UserId = userId });
+
+            return rowAffected > 0;
         }
 
     }

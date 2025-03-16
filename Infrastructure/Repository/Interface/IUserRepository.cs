@@ -10,6 +10,10 @@ namespace Infrastructure.Repository.Interface
 {
     public interface IUserRepository : IGenericRepository<User, string>
     {
-       Task<User> FindByEmailAsync(string email);
+        Task<User> FindByEmailAsync(string email);
+
+        Task<User> GetUserByRefreshToken(string refreshToken);
+
+        Task<bool> UpdateRefreshToken(string userId, string refreshToken, DateTime expiryDate);
     }
 }

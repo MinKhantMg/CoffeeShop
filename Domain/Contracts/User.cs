@@ -20,4 +20,8 @@ public class User : BaseEntity<string>
 
     public string? PasswordHash { get; set; } = default!;
 
+    public string? RefreshToken { get; set; }
+
+    public DateTime RefreshTokenExpiry { get; set; }
+
 }

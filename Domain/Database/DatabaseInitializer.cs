@@ -41,7 +41,9 @@ public class DatabaseInitializer
                         DeletedOn DATETIME,
                         DeletedBy TEXT,
                         IsDeleted BOOLEAN DEFAULT 0,
-                        Status BOOLEAN DEFAULT 1
+                        Status BOOLEAN DEFAULT 1,
+                        RefreshToken TEXT,
+                        RefreshTokenExpiry DATETIME
                     );
                 ";
             connection.Execute(createTableQuery);
@@ -74,8 +76,9 @@ public class DatabaseInitializer
                     CreatedOn = DateTime.UtcNow,
                     LastModifiedBy = "System",
                     LastModifiedOn = DateTime.UtcNow,
-                    Status = true
-
+                    Status = true,
+                    RefreshToken = "System",
+                    RefreshTokenExpiry = DateTime.UtcNow
                 });
 
                 Console.WriteLine("Admin user added successfully.");

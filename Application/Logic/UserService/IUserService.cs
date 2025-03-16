@@ -13,7 +13,7 @@ namespace Application.Logic.UserService
     {
         Task<int> RegisterUserAsync(UserRegistrationDto userDto);
 
-        Task<int> LoginUserAsync(UserLoginDto userDto);
+        //Task<int> LoginUserAsync(UserLoginDto userDto);
 
         //Task<int> Create(MemberDto dto);
         //Task<int> Update(string id, MemberDto dto);

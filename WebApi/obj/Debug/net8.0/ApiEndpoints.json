@@ -1,15 +1,31 @@
 [
   {
-    "ContainingType": "WebApi.Controllers.UserController",
-    "Method": "LoginCustomer",
-    "RelativePath": "user/login",
+    "ContainingType": "WebApi.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userLoginDto",
+        "Name": "userlogin",
         "Type": "Application.Dto.UserDTO.UserLoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "auth/refresh",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tokenRequest",
+        "Type": "Application.Dto.AuthResponse",
         "IsRequired": true
       }
     ],

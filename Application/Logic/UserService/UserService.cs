@@ -21,7 +21,7 @@ namespace Application.Logic.UserService
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public UserService(IUnit unit, IUserRepository userRepository, IMapper mapper)
+        public UserService(IUnit unit, IUserRepository userRepository, IMapper mapper, TokenService tokenService)
         {
             _unit = unit;
             _genericRepository = _unit.GetRepository<User, string>();
@@ -62,48 +62,16 @@ namespace Application.Logic.UserService
             }
         }
 
-        public async Task<int> LoginUserAsync(UserLoginDto userLoginDto)
-        {
-            try
-            {
+        
 
-                if (string.IsNullOrWhiteSpace(userLoginDto.Email))
-                {
-                    throw new ArgumentException("Email cannot be empty.", nameof(userLoginDto.Email));
-                }
 
-                var user = await _userRepository.FindByEmailAsync(userLoginDto.Email);
-
-                if (user == null)
-                {
-                    Console.WriteLine("Invalid email or password.");
-                    return -1;
-                }
-
-                bool isPasswordValid = BCrypt.Net.BCrypt.Verify(userLoginDto.Password, user.PasswordHash);
-
-                if (!isPasswordValid)
-                {
-                    Console.WriteLine("Invalid email or password.");
-                    return -1;
-                }
-
-                return 1;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error login user: {ex.Message}");
-                return -1;
-            }
-        }
-
-        public async Task<User> GetById(string id)
-        {
-            var user = await _genericRepository.Get(id);
-            if (user == null)
-                throw new Exception("Member record does not exist.");
-            return user;
-        }
+        //public async Task<User> GetById(string id)
+        //{
+        //    var user = await _genericRepository.Get(id);
+        //    if (user == null)
+        //        throw new Exception("Member record does not exist.");
+        //    return user;
+        //}
 
 
     }

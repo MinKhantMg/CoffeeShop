@@ -1,6 +1,7 @@
 ﻿using Application.Dto;
 using Application.Dto.UserDTO;
 using Application.Logic.UserService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,14 +26,14 @@ namespace WebApi.Controllers
 
         }
 
+        //[AllowAnonymous]
+        //[HttpPost("login")]
+        //public async Task<IActionResult> LoginCustomer([FromBody] UserLoginDto userLoginDto)
+        //{
+        //    int response = await _service.LoginUserAsync(userLoginDto);
+        //    return Ok(response);
 
-        [HttpPost("login")]
-        public async Task<IActionResult> LoginCustomer([FromBody] UserLoginDto userLoginDto)
-        {
-            int response = await _service.LoginUserAsync(userLoginDto);
-            return Ok(response);
-
-        }
+        //}
 
     }
 }

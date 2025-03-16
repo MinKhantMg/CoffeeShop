@@ -1,8 +1,13 @@
+using System.Text;
+using Application.Logic;
+using Application.Logic.AuthService;
 using Application.Logic.UserService;
 using Domain.Database;
 using Infrastructure.Repository;
 using Infrastructure.Repository.Interface;
 using Infrastructure.UnitOfWork;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,9 +28,45 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddRouting(context => context.LowercaseUrls = true);
 
+//var jwt = builder.Configuration.GetSection("Jwt");
+//var secretKey = jwt["Secret"];
+
+//Console.WriteLine($"JWT Secret: {secretKey}"); // Debugging
+
+//if (string.IsNullOrEmpty(secretKey))
+//{
+//    throw new ArgumentNullException("JwtSettings:Secret", "JWT Secret Key cannot be null or empty.");
+//}
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false; // Set to true in production
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        ValidateLifetime = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+        ClockSkew = TimeSpan.Zero // Immediate token expiration
+    };
+});
+
+builder.Services.AddAuthorization();
+
 // Register repositories and services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<TokenService>();
 
 // Repository
 builder.Services.AddScoped<IUnit, Unit>();
