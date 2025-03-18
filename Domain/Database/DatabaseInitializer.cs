@@ -43,7 +43,7 @@ public class DatabaseInitializer
                         IsDeleted BOOLEAN DEFAULT 0,
                         Status BOOLEAN DEFAULT 1,
                         RefreshToken TEXT,
-                        RefreshTokenExpiry DATETIME
+                        RefreshTokenExpiry TEXT
                     );
                 ";
             connection.Execute(createTableQuery);
@@ -68,7 +68,7 @@ public class DatabaseInitializer
                 {
                     Id = adminId,
                     Name = "Admin",
-                    Email = "admin@example.com",
+                    Email = "admin@gmail.com",
                     PhoneNumber = "1234567890",
                     Role = "Admin",
                     PasswordHash = hashedPassword,

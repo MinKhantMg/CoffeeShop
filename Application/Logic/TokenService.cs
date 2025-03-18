@@ -26,16 +26,6 @@ public class TokenService
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-        //var claims = new[]
-        //{
-        //     new Claim(ClaimTypes.NameIdentifier, user.Id),
-        //    new Claim(JwtRegisteredClaimNames.Email, user.Email),
-        //    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString().ToUpper()),
-        //    new Claim(ClaimTypes.Role, user.Role.ToString()),
-        //    new Claim("FullName", user.Name),
-        //    new Claim("PhoneNumber", user.PhoneNumber ?? "")
-        //};
-
         var token = new JwtSecurityToken(
             issuer: _config["Jwt:Issuer"],
             audience: _config["Jwt:Audience"],

@@ -16,22 +16,18 @@ namespace Application.Logic.AuthService
 {
     public class AuthService : IAuthService
     {
-        private readonly IUnit _unit;
-        private readonly IGenericRepository<User, string> _genericRepository;
+       // private readonly IUnit _unit;
         private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
         private readonly TokenService _tokenService;
 
-        public AuthService(IUnit unit, IUserRepository userRepository, IMapper mapper, TokenService tokenService)
+        public AuthService(IUnit unit, IUserRepository userRepository, TokenService tokenService)
         {
-            _unit = unit;
-            _genericRepository = _unit.GetRepository<User, string>();
+           // _unit = unit;
             _userRepository = userRepository;
-            _mapper = mapper;
             _tokenService = tokenService;
         }
 
-        public async Task<int> LoginUserAsync(UserLoginDto userLoginDto)
+        public async Task<AuthResponse> LoginUserAsync(UserLoginDto userLoginDto)
         {
             try
             {
@@ -43,26 +39,17 @@ namespace Application.Logic.AuthService
 
                 var user = await _userRepository.FindByEmailAsync(userLoginDto.Email);
 
-                if (user == null)
-                {
-                    Console.WriteLine("Invalid email or password.");
-                    return -1;
-                }
 
-                bool isPasswordValid = BCrypt.Net.BCrypt.Verify(userLoginDto.Password, user.PasswordHash);
+                if (user == null || !BCrypt.Net.BCrypt.Verify(userLoginDto.Password, user.PasswordHash))
+                    throw new UnauthorizedAccessException("Invalid email or password.");
 
-                if (!isPasswordValid)
-                {
-                    Console.WriteLine("Invalid email or password.");
-                    return 400;
-                }
 
                 var claims = new List<Claim>
                 {
-                     new Claim(ClaimTypes.NameIdentifier, user.Name),
+                     new Claim(ClaimTypes.NameIdentifier, user.Id),
                      new Claim(ClaimTypes.Email, user.Email),
-                     new Claim(ClaimTypes.Role, user.Role)
-                 };
+                     new Claim(ClaimTypes.Role, user.Role.ToString())
+                };
 
                 var accessToken = _tokenService.GenerateAccessToken(claims);
                 var refreshToken = _tokenService.GenerateRefreshToken();
@@ -70,12 +57,24 @@ namespace Application.Logic.AuthService
 
                 _userRepository.UpdateRefreshToken(user.Id, refreshToken, expiryDate);
 
-                return 201;
+                return new AuthResponse
+                {
+                    IsSuccess = true,
+                    AccessToken = accessToken,
+                    RefreshToken = refreshToken,
+                    StatusCode = 200,
+                    Message = "Login successful"
+                };
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error login user: {ex.Message}");
-                return 400;
+                return new AuthResponse
+                {
+                    IsSuccess = true,
+                    StatusCode = 200,
+                    Message = "Login successful"
+                };
             }
         }
 
@@ -98,7 +97,7 @@ namespace Application.Logic.AuthService
             // Generate new tokens
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Name),
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.Role, user.Role.ToString())
             };

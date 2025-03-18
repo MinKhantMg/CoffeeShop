@@ -11,7 +11,7 @@ namespace Application.Logic.AuthService
 {
     public interface IAuthService
     {
-        Task<int> LoginUserAsync(UserLoginDto userDto);
+        Task<AuthResponse> LoginUserAsync(UserLoginDto userDto);
 
         Task<int> RefreshToken(AuthResponse tokenRequest);
     }

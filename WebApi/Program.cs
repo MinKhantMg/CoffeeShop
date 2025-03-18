@@ -1,6 +1,7 @@
 using System.Text;
 using Application.Logic;
 using Application.Logic.AuthService;
+using Application.Logic.CategoryService;
 using Application.Logic.UserService;
 using Domain.Database;
 using Infrastructure.Repository;
@@ -8,14 +9,14 @@ using Infrastructure.Repository.Interface;
 using Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
-//builder.Services.AddSingleton(new ApplicationDbContexxt(configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<ApplicationDbContext>();
 builder.Services.AddScoped<DatabaseInitializer>();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddControllersWithViews().AddJsonOptions(options =>
 {
@@ -27,16 +28,6 @@ builder.Services.AddControllersWithViews().AddJsonOptions(options =>
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddRouting(context => context.LowercaseUrls = true);
-
-//var jwt = builder.Configuration.GetSection("Jwt");
-//var secretKey = jwt["Secret"];
-
-//Console.WriteLine($"JWT Secret: {secretKey}"); // Debugging
-
-//if (string.IsNullOrEmpty(secretKey))
-//{
-//    throw new ArgumentNullException("JwtSettings:Secret", "JWT Secret Key cannot be null or empty.");
-//}
 
 builder.Services.AddAuthentication(options =>
 {
@@ -60,12 +51,45 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// Add Swagger and enable JWT Authorization
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+
+    // Add JWT Authentication in Swagger
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "Enter 'Bearer YOUR_ACCESS_TOKEN' (without quotes)",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new List<string>()
+        }
+    });
+});
+
 builder.Services.AddAuthorization();
 
 // Register repositories and services
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<TokenService>();
 
 // Repository
@@ -74,7 +98,7 @@ builder.Services.AddScoped<IUnit, Unit>();
 // Add controllers and API features
 //builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+//builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
@@ -90,6 +114,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

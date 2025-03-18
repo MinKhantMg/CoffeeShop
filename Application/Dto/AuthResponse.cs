@@ -8,8 +8,11 @@ namespace Application.Dto
 {
     public class AuthResponse
     {
+        public Boolean IsSuccess { get; set; }
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }
-        public DateTime Expiration { get; set; }
+
+        public int StatusCode { get; set; }
+        public string Message { get; set; }
     }
 }

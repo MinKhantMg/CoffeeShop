@@ -21,7 +21,7 @@ namespace Application.Logic.UserService
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
 
-        public UserService(IUnit unit, IUserRepository userRepository, IMapper mapper, TokenService tokenService)
+        public UserService(IUnit unit, IUserRepository userRepository, IMapper mapper)
         {
             _unit = unit;
             _genericRepository = _unit.GetRepository<User, string>();

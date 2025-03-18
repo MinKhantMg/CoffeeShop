@@ -34,11 +34,16 @@ public class AuthController : ControllerBase
 
         var result = await _authService.LoginUserAsync(userlogin);
 
-        if (result == 201) // Success
+        if (result.StatusCode == 200) 
         {
-            return Ok(new { message = "Login successful." });
+            return Ok(new
+            {
+                accessToken = result.AccessToken,
+               // refreshToken == result.RefreshToken,
+                message = "Login successful."
+            });
         }
-        else if (result == 400) // Invalid credentials
+        else if (result.StatusCode == 400) 
         {
             return Unauthorized(new { message = "Invalid email or password." });
         }
@@ -52,28 +57,6 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> RefreshToken([FromBody] AuthResponse tokenRequest)
     {
     
-        //var authHeader = Request.Headers["Authorization"].ToString();
-        //if (string.IsNullOrEmpty(tokenRequest.RefreshToken))
-        //{
-        //    return Unauthorized(new { message = "Invalid refresh token." });
-        //}
-
-        //var result = await _authService.RefreshToken(tokenRequest);
-
-        //if (result == 200) // Success
-        //{
-        //    return Ok(new { message = "Token refreshed successfully." });
-        //}
-        //else if (result == 401) // Invalid or expired token
-        //{
-        //    return Unauthorized(new { message = "Refresh token expired or invalid." });
-        //}
-
-        //return StatusCode(500, "An error occurred while processing your request.");
-
-
-
-
         var refreshToken = tokenRequest?.RefreshToken ?? Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
 
         if (string.IsNullOrEmpty(refreshToken))

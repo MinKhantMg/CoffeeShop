@@ -13,7 +13,7 @@ namespace Application.Dto.UserDTO;
 public class UserRegistrationDto 
 {
 
-    public Guid Id { get; set; }
+    //public Guid Id { get; set; }
 
     public string Name { get; set; }
 
@@ -32,7 +32,7 @@ public class UserDtoProfile : Profile
     public UserDtoProfile()
     {
         CreateMap<UserRegistrationDto, User>()
-           .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+          // .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
            .ForMember(dest => dest.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber))
            .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email))

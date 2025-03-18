@@ -18,6 +18,7 @@ namespace WebApi.Controllers
             _service = service;
         }
 
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> RegisterCustomer([FromBody] UserRegistrationDto userRegistrationDto)
         {
@@ -26,14 +27,6 @@ namespace WebApi.Controllers
 
         }
 
-        //[AllowAnonymous]
-        //[HttpPost("login")]
-        //public async Task<IActionResult> LoginCustomer([FromBody] UserLoginDto userLoginDto)
-        //{
-        //    int response = await _service.LoginUserAsync(userLoginDto);
-        //    return Ok(response);
-
-        //}
 
     }
 }
