@@ -10,5 +10,8 @@ namespace Infrastructure.Repository.Interface
 {
     public interface ICategoryRepository : IGenericRepository<Category, string>
     {
+        Task<IEnumerable<Category>> GetAllIsDeletetedAsync();
+
+        Task<Category> GetByCategoryIdAsync(string categoryId);
     }
 }

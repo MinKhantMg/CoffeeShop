@@ -18,18 +18,19 @@ namespace Application.Logic.CategoryService
     {
         private readonly IUnit _unit;
         private readonly IGenericRepository<Category, string> _genericRepository;
+        private readonly ICategoryRepository _categoryRepository;
         private readonly IMapper _mapper;
 
-        public CategoryService(IUnit unit, IMapper mapper)
+        public CategoryService(IUnit unit, IMapper mapper, ICategoryRepository categoryRepository)
         {
             _unit = unit;
             _genericRepository = _unit.GetRepository<Category, string>();
+            _categoryRepository = categoryRepository;
             _mapper = mapper;
         }
 
         public async Task<int> Create(CategoryAddDto dto, ClaimsPrincipal user)
         {
-
             var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
             var category = _mapper.Map<Category>(dto);
             category.Id = Guid.NewGuid().ToString().ToUpper();
@@ -41,30 +42,38 @@ namespace Application.Logic.CategoryService
 
         public async Task<IEnumerable<Category>> GetAll()
         {
-            var category = await _genericRepository.GetAll("");
-            return category;
+            return await _categoryRepository.GetAllIsDeletetedAsync();
         }
 
         public async Task<Category> GetById(string id)
         {
-            var category = await _genericRepository.Get(id);
-            if (category == null)
+            if (id == null)
                 throw new Exception("Category record does not exist.");
-            return category;
+
+            return await _categoryRepository.GetByCategoryIdAsync(id);
+
         }
 
-        public async Task<int> Update(string id, CategoryAddDto dto)
+        public async Task<int> Update(string id, CategoryAddDto dto, ClaimsPrincipal user)
         {
+            var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
+
             var category = await GetById(id);
             category.Name = dto.Name;
-            int memberUpdated = await _genericRepository.Update(category);
-            return memberUpdated;
+            category.LastModifiedBy = adminUserId;
+            category.LastModifiedOn = DateTime.UtcNow;
+            int categoryUpdated = await _genericRepository.Update(category);
+            return categoryUpdated;
         }
 
-        public async Task<bool> SoftDelete(string id)
+        public async Task<bool> SoftDelete(string id, ClaimsPrincipal user)
         {
+            var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
+
             var category = await GetById(id);
-            int result = await _genericRepository.SoftDelete(category); // Could also be done with "isDeleted = true;"
+            category.DeletedBy = adminUserId;
+            category.DeletedOn = DateTime.UtcNow;
+            int result = await _genericRepository.SoftDelete(category);
             return (result > 0);
         }
 

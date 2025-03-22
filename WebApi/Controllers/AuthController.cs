@@ -39,7 +39,6 @@ public class AuthController : ControllerBase
             return Ok(new
             {
                 accessToken = result.AccessToken,
-               // refreshToken == result.RefreshToken,
                 message = "Login successful."
             });
         }

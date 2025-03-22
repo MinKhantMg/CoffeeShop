@@ -11,7 +11,6 @@ namespace Domain.Contracts
     [Table("Category")]
     public class Category : BaseEntity<string>
     {
-        public string Slug { get; set; }
-
+ 
     }
 }

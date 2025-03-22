@@ -13,8 +13,6 @@ public class CategoryAddDto
 {
     public string Name { get; set; }
 
-    public string Slug { get; set; }
-
 }
 
 public class CategoryDtoProfile : Profile
@@ -22,8 +20,7 @@ public class CategoryDtoProfile : Profile
     public CategoryDtoProfile()
     {
         CreateMap<CategoryAddDto, Category>()
-           .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
-           .ForMember(dest => dest.Slug, opt => opt.MapFrom(src => src.Slug));
+           .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
     }
 }
 

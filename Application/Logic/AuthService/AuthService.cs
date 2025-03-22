@@ -16,13 +16,11 @@ namespace Application.Logic.AuthService
 {
     public class AuthService : IAuthService
     {
-       // private readonly IUnit _unit;
         private readonly IUserRepository _userRepository;
         private readonly TokenService _tokenService;
 
-        public AuthService(IUnit unit, IUserRepository userRepository, TokenService tokenService)
+        public AuthService(IUserRepository userRepository, TokenService tokenService)
         {
-           // _unit = unit;
             _userRepository = userRepository;
             _tokenService = tokenService;
         }
@@ -71,9 +69,9 @@ namespace Application.Logic.AuthService
                 Console.WriteLine($"Error login user: {ex.Message}");
                 return new AuthResponse
                 {
-                    IsSuccess = true,
-                    StatusCode = 200,
-                    Message = "Login successful"
+                    IsSuccess = false,
+                    StatusCode = 400,
+                    Message = "Invalid email or password."
                 };
             }
         }

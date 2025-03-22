@@ -17,15 +17,11 @@ namespace Application.Logic.CategoryService
 
         Task<Category> GetById(string id);
 
-        Task<int> Update(string id, CategoryAddDto dto);
+        Task<int> Update(string id, CategoryAddDto dto, ClaimsPrincipal user);
 
-        Task<bool> SoftDelete(string id);
+        Task<bool> SoftDelete(string id, ClaimsPrincipal user);
 
         Task<int> CountAll();
-
-        //// Task<IEnumerable<Member>> Search(string fieldName, string keyword);
-
-
 
     }
 }
