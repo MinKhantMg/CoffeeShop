@@ -18,7 +18,11 @@ namespace WebApi.Controllers
             _service = service;
         }
 
-        [AllowAnonymous]
+        /// <summary>
+        /// Register User
+        /// </summary>
+        /// <param name="userRegistrationDto"></param>
+        /// <returns></returns>
         [HttpPost("register")]
         public async Task<IActionResult> RegisterCustomer([FromBody] UserRegistrationDto userRegistrationDto)
         {

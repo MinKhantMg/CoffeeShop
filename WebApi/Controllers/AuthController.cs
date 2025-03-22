@@ -22,7 +22,11 @@ public class AuthController : ControllerBase
         _authService = authService;
     }
 
-    [AllowAnonymous]
+    /// <summary>
+    /// Login User
+    /// </summary>
+    /// <param name="userlogin"></param>
+    /// <returns></returns>
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] UserLoginDto userlogin)
     {
@@ -50,8 +54,11 @@ public class AuthController : ControllerBase
         return StatusCode(500, "An error occurred while processing your request.");
     }
 
-
-    [AllowAnonymous]
+    /// <summary>
+    /// Refresh Token Call
+    /// </summary>
+    /// <param name="tokenRequest"></param>
+    /// <returns></returns>
     [HttpPost("refresh")]
     public async Task<IActionResult> RefreshToken([FromBody] AuthResponse tokenRequest)
     {

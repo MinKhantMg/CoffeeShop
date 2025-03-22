@@ -37,7 +37,7 @@ namespace Application.Logic.SubCategoryService
             var subCategory = _mapper.Map<SubCategory>(dto);
             subCategory.Id = Guid.NewGuid().ToString().ToUpper();
             subCategory.CreatedBy = adminUserId;
-
+            subCategory.CreatedOn = DateTime.UtcNow;
             int result = await _genericRepository.Add(subCategory);
             return result;
         }

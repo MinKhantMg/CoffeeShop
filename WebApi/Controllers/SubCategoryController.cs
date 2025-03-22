@@ -40,7 +40,7 @@ namespace WebApi.Controllers
 
       
         /// <summary>
-        /// Retrieves all Sub Categories
+        /// Retrieves all SubCategories
         /// </summary>
         /// <returns>Return a list of Sub Catagories</returns>
         [HttpGet]

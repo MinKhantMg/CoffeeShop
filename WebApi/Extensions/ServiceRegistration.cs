@@ -1,0 +1,28 @@
+﻿using Application.Logic.AuthService;
+using Application.Logic.CategoryService;
+using Application.Logic.UserService;
+using Application.Logic;
+using Infrastructure.Repository.Interface;
+using Infrastructure.Repository;
+using Microsoft.Extensions.DependencyInjection;
+using Application.Logic.SubCategoryService;
+using Application.Logic.TableService;
+
+public static class ServiceRegistration
+{
+    public static void AddApplicationServices(this IServiceCollection services)
+    {
+        // Register repositories and services
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<ITableRepository, TableRepository>();
+        services.AddScoped<ITableService, TableService>();
+        services.AddScoped<ICategoryRepository, CategoryRepository>();
+        services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+        services.AddScoped<ISubCategoryService, SubCategoryService>();
+
+        services.AddScoped<TokenService>();
+    }
+}

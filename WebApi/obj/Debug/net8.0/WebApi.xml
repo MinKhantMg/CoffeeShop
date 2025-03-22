@@ -4,6 +4,20 @@
         <name>WebApi</name>
     </assembly>
     <members>
+        <member name="M:WebApi.Controllers.AuthController.Login(Application.Dto.UserDTO.UserLoginDto)">
+            <summary>
+            Login User
+            </summary>
+            <param name="userlogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.AuthController.RefreshToken(Application.Dto.AuthResponse)">
+            <summary>
+            Refresh Token Call
+            </summary>
+            <param name="tokenRequest"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.Controllers.CategoryController.Create(Application.Dto.CategoryDTO.CategoryAddDto)">
             <summary>
             Create Category
@@ -13,7 +27,7 @@
         </member>
         <member name="M:WebApi.Controllers.CategoryController.GetAll">
             <summary>
-            Retrieves all categories
+            Retrieves all Categories
             </summary>
             <returns>Return a list of catagories</returns>
         </member>
@@ -41,14 +55,14 @@
         </member>
         <member name="M:WebApi.Controllers.SubCategoryController.Create(Application.Dto.SubCategoryDTO.SubCategoryDto)">
             <summary>
-            Create SubCategory
+            Create SubCategory By CategoryId
             </summary>
             <param name="dto"></param>
             <returns></returns>
         </member>
         <member name="M:WebApi.Controllers.SubCategoryController.GetAll">
             <summary>
-            Retrieves all Sub Categories
+            Retrieves all SubCategories
             </summary>
             <returns>Return a list of Sub Catagories</returns>
         </member>
@@ -72,6 +86,48 @@
             Delete SubCategory By Id
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.TableController.Create(Application.Dto.TableDTO.TableDto)">
+            <summary>
+            Create Table
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.TableController.GetAll">
+            <summary>
+            Retrieves all Tables
+            </summary>
+            <returns>Return a list of catagories</returns>
+        </member>
+        <member name="M:WebApi.Controllers.TableController.Get(System.String)">
+            <summary>
+            Get Table By Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.TableController.Update(System.String,Application.Dto.TableDTO.TableDto)">
+            <summary>
+            Update Table By Id
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.TableController.Delete(System.String)">
+            <summary>
+            Delete Table By Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.UserController.RegisterCustomer(Application.Dto.UserDTO.UserRegistrationDto)">
+            <summary>
+            Register User
+            </summary>
+            <param name="userRegistrationDto"></param>
             <returns></returns>
         </member>
     </members>

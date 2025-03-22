@@ -4,6 +4,7 @@ using Application.Logic;
 using Application.Logic.AuthService;
 using Application.Logic.CategoryService;
 using Application.Logic.SubCategoryService;
+using Application.Logic.TableService;
 using Application.Logic.UserService;
 using Domain.Database;
 using Infrastructure.Repository;
@@ -60,7 +61,7 @@ builder.Services.AddSwaggerGen(c =>
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     c.IncludeXmlComments(xmlPath);
 
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CoffeeShop API", Version = "v1" });
 
     // Add JWT Authentication in Swagger
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -72,33 +73,15 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer"
     });
 
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
-        {
-            new OpenApiSecurityScheme
-            {
-                Reference = new OpenApiReference
-                {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            new List<string>()
-        }
-    });
+    // Apply authentication ONLY for CategoryController
+    c.OperationFilter<AuthOperationFilter>();
+
 });
 
 builder.Services.AddAuthorization();
 
-// Register repositories and services
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<ICategoryService, CategoryService>();
-builder.Services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
-builder.Services.AddScoped<ISubCategoryService, SubCategoryService>();
-builder.Services.AddScoped<TokenService>();
+// Call the extension method to register services
+builder.Services.AddApplicationServices();
 
 // Repository
 builder.Services.AddScoped<IUnit, Unit>();

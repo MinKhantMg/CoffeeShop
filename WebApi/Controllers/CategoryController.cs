@@ -44,7 +44,7 @@ public class CategoryController : ControllerBase
     }
 
     /// <summary>
-    /// Retrieves all categories
+    /// Retrieves all Categories
     /// </summary>
     /// <returns>Return a list of catagories</returns>
     [HttpGet]

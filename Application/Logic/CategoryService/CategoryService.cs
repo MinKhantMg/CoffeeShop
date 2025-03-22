@@ -35,7 +35,7 @@ namespace Application.Logic.CategoryService
             var category = _mapper.Map<Category>(dto);
             category.Id = Guid.NewGuid().ToString().ToUpper();
             category.CreatedBy = adminUserId;
-
+            category.CreatedOn = DateTime.UtcNow;
             int result = await _genericRepository.Add(category);
             return result;
         }
