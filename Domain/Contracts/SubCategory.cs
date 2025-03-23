@@ -8,7 +8,7 @@ using Domain.Base;
 
 namespace Domain.Contracts
 {
-    [Table("SubCategory")]
+    [Table("SubCategories")]
     public class SubCategory: BaseEntity<string>
     {
         public string? CategoryId { get; set; }

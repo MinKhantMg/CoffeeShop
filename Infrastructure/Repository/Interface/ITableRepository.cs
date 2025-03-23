@@ -14,5 +14,6 @@ namespace Infrastructure.Repository.Interface
         Task<IEnumerable<Table>> GetAllIsDeletetedAsync();
 
         Task<Table> GetByTableIdAsync(string tableId);
+
     }
 }

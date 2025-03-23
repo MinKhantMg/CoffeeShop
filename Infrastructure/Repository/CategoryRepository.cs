@@ -17,14 +17,14 @@ namespace Infrastructure.Repository
 
         public async Task<IEnumerable<Category>> GetAllIsDeletetedAsync()
         {
-            var query = "SELECT * FROM Category WHERE IsDeleted = 0";
+            var query = "SELECT * FROM Categories WHERE IsDeleted = 0";
 
             return await _connection.QueryAsync<Category>(query);
         }
 
         public async Task<Category> GetByCategoryIdAsync(string categoryId)
         {
-            var query = "SELECT * FROM Category WHERE IsDeleted = 0 AND Id = @CategoryId";
+            var query = "SELECT * FROM Categories WHERE IsDeleted = 0 AND Id = @CategoryId";
 
             return await _connection.QueryFirstOrDefaultAsync<Category>(query, new { CategoryId = categoryId });
         }

@@ -8,7 +8,7 @@ using Domain.Base;
 
 namespace Domain.Contracts
 {
-    [Table("Category")]
+    [Table("Categories")]
     public class Category : BaseEntity<string>
     {
  

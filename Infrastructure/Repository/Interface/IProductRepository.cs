@@ -10,5 +10,8 @@ namespace Infrastructure.Repository.Interface
 {
     public interface IProductRepository : IGenericRepository<Product, string>
     {
+        Task<IEnumerable<Product>> GetAllIsDeletetedAsync();
+
+        Task<Product> GetByIdAsync(string productId);
     }
 }

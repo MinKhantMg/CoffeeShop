@@ -1,15 +1,6 @@
 using System.Reflection;
 using System.Text;
-using Application.Logic;
-using Application.Logic.AuthService;
-using Application.Logic.CategoryService;
-using Application.Logic.SubCategoryService;
-using Application.Logic.TableService;
-using Application.Logic.UserService;
 using Domain.Database;
-using Infrastructure.Repository;
-using Infrastructure.Repository.Interface;
-using Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -83,14 +74,7 @@ builder.Services.AddAuthorization();
 // Call the extension method to register services
 builder.Services.AddApplicationServices();
 
-// Repository
-builder.Services.AddScoped<IUnit, Unit>();
-
-// Add controllers and API features
-//builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-//builder.Services.AddSwaggerGen();
-
 
 var app = builder.Build();
 

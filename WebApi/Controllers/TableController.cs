@@ -43,7 +43,8 @@ namespace WebApi.Controllers
         /// Retrieves all Tables
         /// </summary>
         /// <returns>Return a list of catagories</returns>
-        [HttpGet]
+        [AllowAnonymous]
+        [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
             var category = (await _service.GetAll()).ToList();

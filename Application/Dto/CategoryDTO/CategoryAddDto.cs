@@ -19,8 +19,7 @@ public class CategoryDtoProfile : Profile
 {
     public CategoryDtoProfile()
     {
-        CreateMap<CategoryAddDto, Category>()
-           .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name));
+        CreateMap<CategoryAddDto, Category>();
     }
 }
 

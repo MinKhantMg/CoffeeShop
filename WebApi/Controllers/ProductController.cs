@@ -1,6 +1,6 @@
-﻿using Application.Dto.CategoryDTO;
+﻿using Application.Dto.ProductDTO;
 using Application.Dto.SubCategoryDTO;
-using Application.Logic.SubCategoryService;
+using Application.Logic.ProductService;
 using Domain.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -11,75 +11,75 @@ namespace WebApi.Controllers
     [Authorize]
     [Route("[controller]")]
     [ApiController]
-    public class SubCategoryController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly ISubCategoryService _service;
+        private readonly IProductService _service;
 
-        public SubCategoryController(ISubCategoryService subCategoryService)
+        public ProductController(IProductService service)
         {
-            _service = subCategoryService;
+            _service = service;
         }
 
         /// <summary>
-        /// Create SubCategory By CategoryId
+        /// Create Product By CategoryId and SubCategoryId
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] SubCategoryDto dto)
+        public async Task<IActionResult> Create([FromBody] ProductAddDto dto)
         {
             var user = HttpContext.User;
 
-            int subCategoryCreated = await _service.Create(dto, user);
+            int productCreated = await _service.Create(dto, user);
 
-            if (subCategoryCreated > 0)
-                return Created("", new { result = (subCategoryCreated > 0) });
+            if (productCreated > 0)
+                return Created("", new { result = (productCreated > 0) });
             else
-                return StatusCode(500, "Failed to create subcategory.");
+                return StatusCode(500, "Failed to create product.");
         }
 
 
         /// <summary>
-        /// Retrieves all SubCategories
+        /// Retrieves all Products
         /// </summary>
         /// <returns>Return a list of Sub Catagories</returns>
         [AllowAnonymous]
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-            var subCategory = (await _service.GetAll()).ToList();
+            var product = (await _service.GetAll()).ToList();
             int totalItems = await _service.CountAll(); // Note that this can be paginated
-            return Ok(new { subCategory, totalItems });
+            return Ok(new { product, totalItems });
         }
 
         /// <summary>
-        /// Get SubCategory By Id
+        /// Get Product By Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            SubCategory subCategory = await _service.GetById(id);
-            return Ok(new { subCategory });
+            Product product = await _service.GetById(id);
+            return Ok(new { product });
         }
 
         /// <summary>
-        /// Update SubCategory By Id
+        /// Update Product By Id
         /// </summary>
         /// <param name="id"></param>
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(string id, [FromBody] SubCategoryDto dto)
+        public async Task<IActionResult> Update(string id, [FromBody] ProductAddDto dto)
         {
             var user = HttpContext.User;
-            int categoryEdited = await _service.Update(id, dto, user);
-            return Ok(new { result = (categoryEdited > 0) });
+            int productEdited = await _service.Update(id, dto, user);
+            return Ok(new { result = (productEdited > 0) });
         }
 
         /// <summary>
-        /// Delete SubCategory By Id
+        /// Delete Product By Id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -88,7 +88,7 @@ namespace WebApi.Controllers
         {
             var user = HttpContext.User;
             bool result = await _service.SoftDelete(id, user);
-            return Ok(new { message = (result) ? "SubCategory record was deleted." : "An error occured." });
+            return Ok(new { message = (result) ? "Product record was deleted." : "An error occured." });
         }
 
     }

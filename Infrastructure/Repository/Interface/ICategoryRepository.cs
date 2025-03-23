@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 using Domain.Contracts;
 using Infrastructure.GenericRepository;
 
-namespace Infrastructure.Repository.Interface
-{
-    public interface ICategoryRepository : IGenericRepository<Category, string>
-    {
-        Task<IEnumerable<Category>> GetAllIsDeletetedAsync();
+namespace Infrastructure.Repository.Interface;
 
-        Task<Category> GetByCategoryIdAsync(string categoryId);
-    }
+public interface ICategoryRepository : IGenericRepository<Category, string>
+{
+    Task<IEnumerable<Category>> GetAllIsDeletetedAsync();
+
+    Task<Category> GetByCategoryIdAsync(string categoryId);
 }

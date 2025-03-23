@@ -47,7 +47,8 @@ public class CategoryController : ControllerBase
     /// Retrieves all Categories
     /// </summary>
     /// <returns>Return a list of catagories</returns>
-    [HttpGet]
+    [AllowAnonymous]
+    [HttpGet("all")]
     public async Task<IActionResult> GetAll()
     {
         var category = (await _service.GetAll()).ToList();

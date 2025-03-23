@@ -1,23 +1,37 @@
 ﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 public class AuthOperationFilter : IOperationFilter
 {
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
-        // List of controllers that require authentication
-        var protectedControllers = new HashSet<string>
+        var controllerType = context.MethodInfo.DeclaringType;
+        if (controllerType == null) return;
+
+        // Check if the method or controller has the [Authorize] attribute
+        var hasAuthorizeAttribute = controllerType.GetCustomAttributes(true)
+            .OfType<AuthorizeAttribute>()
+            .Any() ||
+            context.MethodInfo.GetCustomAttributes(true)
+            .OfType<AuthorizeAttribute>()
+            .Any();
+
+        // Check if the method has [AllowAnonymous] (which overrides [Authorize])
+        var hasAllowAnonymous = context.MethodInfo.GetCustomAttributes(true)
+            .OfType<AllowAnonymousAttribute>()
+            .Any();
+
+        // If the method has [AllowAnonymous], don't require authentication in Swagger
+        if (hasAllowAnonymous)
         {
-            // Add new controllers here
-            "CategoryController",
-            "SubCategoryController",
-            "TableController",
-            
-        };
+            return;
+        }
 
-        var controllerName = context.MethodInfo.DeclaringType.Name;
-
-        if (protectedControllers.Contains(controllerName))
+        // If the controller or method has [Authorize], add security definition
+        if (hasAuthorizeAttribute)
         {
             operation.Security = new List<OpenApiSecurityRequirement>
             {
@@ -36,10 +50,6 @@ public class AuthOperationFilter : IOperationFilter
                     }
                 }
             };
-        }
-        else
-        {
-            operation.Security.Clear(); // Keep other controllers public
         }
     }
 }

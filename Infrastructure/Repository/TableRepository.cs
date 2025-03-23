@@ -8,6 +8,7 @@ using Domain.Contracts;
 using Domain.Database;
 using Infrastructure.GenericRepository;
 using Infrastructure.Repository.Interface;
+using Infrastructure.UnitOfWork;
 
 namespace Infrastructure.Repository
 {
@@ -28,5 +29,6 @@ namespace Infrastructure.Repository
 
             return await _connection.QueryFirstOrDefaultAsync<Table>(query, new { TableId = tableId });
         }
+
     }
 }

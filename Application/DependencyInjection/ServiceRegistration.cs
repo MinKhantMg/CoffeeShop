@@ -7,6 +7,8 @@ using Infrastructure.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Logic.SubCategoryService;
 using Application.Logic.TableService;
+using Infrastructure.UnitOfWork;
+using Application.Logic.ProductService;
 
 public static class ServiceRegistration
 {
@@ -15,14 +17,22 @@ public static class ServiceRegistration
         // Register repositories and services
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserService, UserService>();
+
         services.AddScoped<IAuthService, AuthService>();
+
         services.AddScoped<ITableRepository, TableRepository>();
         services.AddScoped<ITableService, TableService>();
+
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ICategoryService, CategoryService>();
+
         services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
         services.AddScoped<ISubCategoryService, SubCategoryService>();
 
+        services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IProductService, ProductService>();
+
         services.AddScoped<TokenService>();
+        services.AddScoped<IUnit, Unit>();
     }
 }
