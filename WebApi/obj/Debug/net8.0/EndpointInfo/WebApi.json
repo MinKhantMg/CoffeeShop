@@ -379,6 +379,30 @@
         ]
       }
     },
+    "/product/subcategories/{subCategoryId}": {
+      "get": {
+        "tags": [
+          "Product"
+        ],
+        "summary": "Get Product By SubCategoryId",
+        "parameters": [
+          {
+            "name": "subCategoryId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/subcategory": {
       "post": {
         "tags": [
@@ -531,6 +555,30 @@
             "Bearer": [ ]
           }
         ]
+      }
+    },
+    "/subcategory/categories/{categoryId}": {
+      "get": {
+        "tags": [
+          "SubCategory"
+        ],
+        "summary": "Get SubCategory By CategoryId",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/table": {

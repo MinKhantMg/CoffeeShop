@@ -51,8 +51,17 @@ namespace Application.Logic.SubCategoryService
         {
             var subCategory = await _subCategoryRepository.GetByIdAsync(id);
             if (subCategory == null)
-                throw new Exception("Category record does not exist.");
+                throw new Exception("SubCategory record does not exist.");
             return subCategory;
+        }
+
+        public async Task<IEnumerable<SubCategory>> GetByCategoryId(string categoryId)
+        {
+            var subCategory = await _subCategoryRepository.GetByCategoryIdAsync(categoryId);
+            if (subCategory == null)
+                throw new Exception("No subcategories found for this category.");
+            return subCategory;
+
         }
 
         public async Task<int> Update(string id, SubCategoryDto dto, ClaimsPrincipal user)

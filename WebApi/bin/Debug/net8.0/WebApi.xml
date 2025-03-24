@@ -73,6 +73,13 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.Controllers.ProductController.GetByCategoryId(System.String)">
+            <summary>
+            Get Product By SubCategoryId
+            </summary>
+            <param name="subCategoryId"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.Controllers.ProductController.Update(System.String,Application.Dto.ProductDTO.ProductAddDto)">
             <summary>
             Update Product By Id
@@ -106,6 +113,13 @@
             Get SubCategory By Id
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.SubCategoryController.GetByCategoryId(System.String)">
+            <summary>
+            Get SubCategory By CategoryId
+            </summary>
+            <param name="categoryId"></param>
             <returns></returns>
         </member>
         <member name="M:WebApi.Controllers.SubCategoryController.Update(System.String,Application.Dto.SubCategoryDTO.SubCategoryDto)">

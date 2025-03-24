@@ -13,5 +13,7 @@ namespace Infrastructure.Repository.Interface
         Task<IEnumerable<Product>> GetAllIsDeletetedAsync();
 
         Task<Product> GetByIdAsync(string productId);
+
+        Task<IEnumerable<Product>> GetBySubCategoryIdAsync(string subCategoryId);
     }
 }

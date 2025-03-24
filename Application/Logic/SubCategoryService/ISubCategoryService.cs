@@ -18,6 +18,8 @@ namespace Application.Logic.SubCategoryService
 
         Task<SubCategory> GetById(string id);
 
+        Task<IEnumerable<SubCategory>> GetByCategoryId(string categoryId);
+
         Task<int> Update(string id, SubCategoryDto dto, ClaimsPrincipal user);
 
         Task<bool> SoftDelete(string id, ClaimsPrincipal user);

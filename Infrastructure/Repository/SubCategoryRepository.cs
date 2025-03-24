@@ -29,5 +29,12 @@ namespace Infrastructure.Repository
             return await _connection.QueryFirstOrDefaultAsync<SubCategory>(query, new { SubCategoryId = subCategoryId });
         }
 
+        public async Task<IEnumerable<SubCategory>> GetByCategoryIdAsync(string categoryId)
+        {
+            var query = "SELECT * FROM SubCategories WHERE IsDeleted = 0  AND CategoryId = @CategoryId";
+
+            return await _connection.QueryAsync<SubCategory>(query, new { CategoryId = categoryId });
+        }
+
     }
 }

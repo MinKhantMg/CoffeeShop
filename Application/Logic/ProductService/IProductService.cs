@@ -13,6 +13,8 @@ namespace Application.Logic.ProductService
 
         Task<Product> GetById(string id);
 
+        Task<IEnumerable<Product>> GetBySubCategoryId(string subCategoryId);
+
         Task<int> Update(string id, ProductAddDto dto, ClaimsPrincipal user);
 
         Task<bool> SoftDelete(string id, ClaimsPrincipal user);

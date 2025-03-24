@@ -21,7 +21,7 @@ namespace WebApi.Controllers
         }
 
         /// <summary>
-        /// Create Product By CategoryId and SubCategoryId
+        /// Create Product By SubCategoryId
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
@@ -62,6 +62,19 @@ namespace WebApi.Controllers
         {
             Product product = await _service.GetById(id);
             return Ok(new { product });
+        }
+
+        /// <summary>
+        /// Get Product By SubCategoryId
+        /// </summary>
+        /// <param name="subCategoryId"></param>
+        /// <returns></returns>
+        [AllowAnonymous]
+        [HttpGet("subcategories/{subCategoryId}")]
+        public async Task<IActionResult> GetByCategoryId(string subCategoryId)
+        {
+            var products = await _service.GetBySubCategoryId(subCategoryId);
+            return Ok(new { products });
         }
 
         /// <summary>

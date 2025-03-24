@@ -65,6 +65,19 @@ namespace WebApi.Controllers
         }
 
         /// <summary>
+        /// Get SubCategory By CategoryId
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
+        [AllowAnonymous]
+        [HttpGet("categories/{categoryId}")]
+        public async Task<IActionResult> GetByCategoryId(string categoryId)
+        {
+            var subCategory = await _service.GetByCategoryId(categoryId);
+            return Ok(new { subCategory });
+        }
+
+        /// <summary>
         /// Update SubCategory By Id
         /// </summary>
         /// <param name="id"></param>

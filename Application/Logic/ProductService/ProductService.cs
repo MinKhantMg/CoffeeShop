@@ -54,6 +54,14 @@ namespace Application.Logic.ProductService
             return product;
         }
 
+        public async Task<IEnumerable<Product>> GetBySubCategoryId(string subCategoryId)
+        {
+            var product = await _productRepository.GetBySubCategoryIdAsync(subCategoryId);
+            if (product == null)
+                throw new Exception("No products found for this subCategory.");
+            return product;
+        }
+
         public async Task<int> Update(string id, ProductAddDto dto, ClaimsPrincipal user)
         {
             var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
