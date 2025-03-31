@@ -22,6 +22,6 @@ public class User : BaseEntity<string>
 
     public string? RefreshToken { get; set; }
 
-    public DateTime RefreshTokenExpiry { get; set; }
+    public DateTime? RefreshTokenExpiry { get; set; }
 
 }

@@ -62,17 +62,5 @@ namespace Application.Logic.UserService
             }
         }
 
-        
-
-
-        //public async Task<User> GetById(string id)
-        //{
-        //    var user = await _genericRepository.Get(id);
-        //    if (user == null)
-        //        throw new Exception("Member record does not exist.");
-        //    return user;
-        //}
-
-
     }
 }

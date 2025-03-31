@@ -22,6 +22,6 @@ public class BaseEntity<TId> : IEntity<TId>, ISoftDelete
     {
 
         CreatedOn = DateTime.UtcNow;
-        LastModifiedOn = DateTime.UtcNow;
+       // LastModifiedOn = DateTime.UtcNow;
     }
 }

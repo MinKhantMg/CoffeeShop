@@ -66,15 +66,13 @@ namespace Application.Logic.CategoryService
             return categoryUpdated;
         }
 
-        public async Task<bool> SoftDelete(string id, ClaimsPrincipal user)
+        public async Task<int> SoftDelete(string id)
         {
-            var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
+            //var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
 
             var category = await GetById(id);
-            category.DeletedBy = adminUserId;
-            category.DeletedOn = DateTime.UtcNow;
             int result = await _genericRepository.SoftDelete(category);
-            return (result > 0);
+            return result;
         }
 
         public async Task<int> CountAll()

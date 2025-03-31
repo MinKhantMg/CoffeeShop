@@ -43,7 +43,6 @@ namespace WebApi.Controllers
         /// Retrieves all SubCategories
         /// </summary>
         /// <returns>Return a list of Sub Catagories</returns>
-        [AllowAnonymous]
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {

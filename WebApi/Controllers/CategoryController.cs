@@ -47,7 +47,7 @@ public class CategoryController : ControllerBase
     /// Retrieves all Categories
     /// </summary>
     /// <returns>Return a list of catagories</returns>
-    [AllowAnonymous]
+ 
     [HttpGet("all")]
     public async Task<IActionResult> GetAll()
     {
@@ -90,9 +90,9 @@ public class CategoryController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(string id)
     {
-        var user = HttpContext.User;
-        bool result = await _service.SoftDelete(id, user);
-        return Ok(new { message = (result) ? "Category record was deleted." : "An error occured." });
+      //var user = HttpContext.User;
+        int result = await _service.SoftDelete(id);
+        return Ok(new { result = (result > 0) });
     }
 
 }

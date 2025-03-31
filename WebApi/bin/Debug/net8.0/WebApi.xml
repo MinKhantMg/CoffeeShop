@@ -55,7 +55,7 @@
         </member>
         <member name="M:WebApi.Controllers.ProductController.Create(Application.Dto.ProductDTO.ProductAddDto)">
             <summary>
-            Create Product By CategoryId and SubCategoryId
+            Create Product By SubCategoryId
             </summary>
             <param name="dto"></param>
             <returns></returns>

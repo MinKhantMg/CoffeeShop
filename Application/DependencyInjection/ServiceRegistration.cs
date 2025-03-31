@@ -1,14 +1,14 @@
-﻿using Application.Logic.AuthService;
+﻿using Application.Logic;
+using Application.Logic.AuthService;
 using Application.Logic.CategoryService;
 using Application.Logic.UserService;
-using Application.Logic;
-using Infrastructure.Repository.Interface;
-using Infrastructure.Repository;
-using Microsoft.Extensions.DependencyInjection;
+using Application.Logic.ProductService;
 using Application.Logic.SubCategoryService;
 using Application.Logic.TableService;
+using Infrastructure.Repository.Interface;
+using Infrastructure.Repository;
 using Infrastructure.UnitOfWork;
-using Application.Logic.ProductService;
+using Microsoft.Extensions.DependencyInjection;
 
 public static class ServiceRegistration
 {

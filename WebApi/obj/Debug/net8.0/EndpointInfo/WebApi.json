@@ -119,7 +119,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/category/{id}": {
@@ -230,7 +235,7 @@
         "tags": [
           "Product"
         ],
-        "summary": "Create Product By CategoryId and SubCategoryId",
+        "summary": "Create Product By SubCategoryId",
         "requestBody": {
           "description": "",
           "content": {
@@ -451,7 +456,12 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
       }
     },
     "/subcategory/{id}": {
@@ -782,6 +792,10 @@
             "nullable": true
           },
           "refreshToken": {
+            "type": "string",
+            "nullable": true
+          },
+          "expiryDate": {
             "type": "string",
             "nullable": true
           },

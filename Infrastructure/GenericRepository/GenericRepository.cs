@@ -8,7 +8,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
-using Domain.Contracts;
 using Domain.Database;
 
 namespace Infrastructure.GenericRepository;

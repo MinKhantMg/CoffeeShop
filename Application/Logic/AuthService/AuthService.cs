@@ -44,7 +44,7 @@ namespace Application.Logic.AuthService
 
                 var claims = new List<Claim>
                 {
-                     new Claim(ClaimTypes.NameIdentifier, user.Id),
+                     new Claim(ClaimTypes.NameIdentifier, user.Name),
                      new Claim(ClaimTypes.Email, user.Email),
                      new Claim(ClaimTypes.Role, user.Role.ToString())
                 };
@@ -60,6 +60,7 @@ namespace Application.Logic.AuthService
                     IsSuccess = true,
                     AccessToken = accessToken,
                     RefreshToken = refreshToken,
+                    ExpiryDate = Convert.ToString(expiryDate),
                     StatusCode = 200,
                     Message = "Login successful"
                 };
@@ -95,7 +96,7 @@ namespace Application.Logic.AuthService
             // Generate new tokens
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.NameIdentifier, user.Name),
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.Role, user.Role.ToString())
             };

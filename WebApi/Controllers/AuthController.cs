@@ -27,6 +27,7 @@ public class AuthController : ControllerBase
     /// </summary>
     /// <param name="userlogin"></param>
     /// <returns></returns>
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] UserLoginDto userlogin)
     {
@@ -43,6 +44,8 @@ public class AuthController : ControllerBase
             return Ok(new
             {
                 accessToken = result.AccessToken,
+                refreshToken = result.RefreshToken,
+                expiryDate = result.ExpiryDate,
                 message = "Login successful."
             });
         }
@@ -59,6 +62,7 @@ public class AuthController : ControllerBase
     /// </summary>
     /// <param name="tokenRequest"></param>
     /// <returns></returns>
+    [AllowAnonymous]
     [HttpPost("refresh")]
     public async Task<IActionResult> RefreshToken([FromBody] AuthResponse tokenRequest)
     {

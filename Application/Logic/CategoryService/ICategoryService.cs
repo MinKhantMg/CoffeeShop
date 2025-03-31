@@ -19,7 +19,7 @@ namespace Application.Logic.CategoryService
 
         Task<int> Update(string id, CategoryAddDto dto, ClaimsPrincipal user);
 
-        Task<bool> SoftDelete(string id, ClaimsPrincipal user);
+        Task<int> SoftDelete(string id);
 
         Task<int> CountAll();
 

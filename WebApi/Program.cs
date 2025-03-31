@@ -7,6 +7,16 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowBlazor", policy =>
+    {
+        policy.WithOrigins("https://localhost:7253") // Change to your Blazor URL
+              .AllowAnyMethod()
+              .AllowAnyHeader()
+              .AllowCredentials();
+    });
+});
 
 builder.Services.AddScoped<ApplicationDbContext>();
 builder.Services.AddScoped<DatabaseInitializer>();
@@ -18,7 +28,6 @@ builder.Services.AddControllersWithViews().AddJsonOptions(options =>
     options.JsonSerializerOptions.WriteIndented = true;
 });
 
-//builder.Services.AddControllers();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddRouting(context => context.LowercaseUrls = true);
@@ -64,7 +73,6 @@ builder.Services.AddSwaggerGen(c =>
         Scheme = "Bearer"
     });
 
-    // Apply authentication ONLY for CategoryController
     c.OperationFilter<AuthOperationFilter>();
 
 });
@@ -91,6 +99,8 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseCors("AllowBlazor");
 
 app.MapControllers();
 
