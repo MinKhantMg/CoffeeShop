@@ -77,15 +77,15 @@ namespace Application.Logic.SubCategoryService
             return subCategoryUpdated;
         }
 
-        public async Task<bool> SoftDelete(string id, ClaimsPrincipal user)
+        public async Task<int> SoftDelete(string id)
         {
-            var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
+            //var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
 
             var subCategory = await GetById(id);
-            subCategory.DeletedBy = adminUserId;
-            subCategory.DeletedOn = DateTime.UtcNow;
+            //subCategory.DeletedBy = adminUserId;
+            //subCategory.DeletedOn = DateTime.UtcNow;
             int result = await _genericRepository.SoftDelete(subCategory);
-            return (result > 0);
+            return result;
 
         }
 

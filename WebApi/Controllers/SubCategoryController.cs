@@ -98,9 +98,9 @@ namespace WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            var user = HttpContext.User;
-            bool result = await _service.SoftDelete(id, user);
-            return Ok(new { message = (result) ? "SubCategory record was deleted." : "An error occured." });
+           // var user = HttpContext.User;
+            int result = await _service.SoftDelete(id);
+            return Ok(new { result = (result > 0) });
         }
 
     }

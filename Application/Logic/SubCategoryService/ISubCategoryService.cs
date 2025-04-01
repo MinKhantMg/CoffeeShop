@@ -22,7 +22,7 @@ namespace Application.Logic.SubCategoryService
 
         Task<int> Update(string id, SubCategoryDto dto, ClaimsPrincipal user);
 
-        Task<bool> SoftDelete(string id, ClaimsPrincipal user);
+        Task<int> SoftDelete(string id);
 
         Task<int> CountAll();
     }
