@@ -75,15 +75,14 @@ namespace Application.Logic.ProductService
             return productUpdated;
         }
 
-        public async Task<bool> SoftDelete(string id, ClaimsPrincipal user)
+        public async Task<int> SoftDelete(string id)
         {
-            var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
+            
 
             var product = await GetById(id);
-            product.DeletedBy = adminUserId;
-            product.DeletedOn = DateTime.UtcNow;
+           
             int result = await _genericRepository.SoftDelete(product);
-            return (result > 0);
+            return result;
 
         }
 

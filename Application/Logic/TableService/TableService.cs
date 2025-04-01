@@ -69,15 +69,14 @@ namespace Application.Logic.TableService
             return tableUpdated;
         }
 
-        public async Task<bool> SoftDelete(string id, ClaimsPrincipal user)
+        public async Task<int> SoftDelete(string id)
         {
-            var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
+           
 
             var table = await GetById(id);
-            table.DeletedBy = adminUserId;
-            table.DeletedOn = DateTime.UtcNow;
+          
             int result = await _genericRepository.SoftDelete(table);
-            return (result > 0);
+            return result;
         }
 
         public async Task<int> CountAll()

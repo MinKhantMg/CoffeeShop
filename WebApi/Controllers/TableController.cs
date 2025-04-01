@@ -46,9 +46,9 @@ namespace WebApi.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-            var category = (await _service.GetAll()).ToList();
+            var table = (await _service.GetAll()).ToList();
             int totalItems = await _service.CountAll();
-            return Ok(new { category, totalItems });
+            return Ok(new { table, totalItems });
         }
 
         /// <summary>
@@ -85,9 +85,10 @@ namespace WebApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            var user = HttpContext.User;
-            bool result = await _service.SoftDelete(id, user);
-            return Ok(new { message = (result) ? "Table record was deleted." : "An error occured." });
+         
+            int result = await _service.SoftDelete(id);
+            return Ok(new { result = (result > 0) });
         }
     }
 }
+

@@ -20,7 +20,7 @@ namespace Application.Logic.TableService
 
         Task<int> Update(string id, TableDto dto, ClaimsPrincipal user);
 
-        Task<bool> SoftDelete(string id, ClaimsPrincipal user);
+        Task<int> SoftDelete(string id);
 
         Task<int> CountAll();
     }

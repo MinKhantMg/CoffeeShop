@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\webapi\\controllers\\tablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\tablecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\webapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\dto\\productdto\\productadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\dto\\productdto\\productadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,14 +27,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TableController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\TableController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\TableController.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\TableController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\TableController.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAIwCwAAAA6AAAAAAAAAA==",
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCwAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T13:16:16.527Z",
+              "WhenOpened": "2025-04-01T16:52:11.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductAddDto.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Dto\\ProductDTO\\ProductAddDto.cs",
+              "RelativeDocumentMoniker": "Application\\Dto\\ProductDTO\\ProductAddDto.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Dto\\ProductDTO\\ProductAddDto.cs",
+              "RelativeToolTip": "Application\\Dto\\ProductDTO\\ProductAddDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T16:49:36.842Z",
               "EditorCaption": ""
             }
           ]

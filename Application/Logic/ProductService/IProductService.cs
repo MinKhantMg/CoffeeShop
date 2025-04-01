@@ -17,7 +17,7 @@ namespace Application.Logic.ProductService
 
         Task<int> Update(string id, ProductAddDto dto, ClaimsPrincipal user);
 
-        Task<bool> SoftDelete(string id, ClaimsPrincipal user);
+        Task<int> SoftDelete(string id);
 
         Task<int> CountAll();
     }
