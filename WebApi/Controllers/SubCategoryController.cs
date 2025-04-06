@@ -43,6 +43,7 @@ namespace WebApi.Controllers
         /// Retrieves all SubCategories
         /// </summary>
         /// <returns>Return a list of Sub Catagories</returns>
+        [AllowAnonymous]
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
@@ -69,7 +70,7 @@ namespace WebApi.Controllers
         /// <param name="categoryId"></param>
         /// <returns></returns>
         [AllowAnonymous]
-        [HttpGet("categories/{categoryId}")]
+        [HttpGet("all/{categoryId}")]
         public async Task<IActionResult> GetByCategoryId(string categoryId)
         {
             var subCategory = await _service.GetByCategoryId(categoryId);

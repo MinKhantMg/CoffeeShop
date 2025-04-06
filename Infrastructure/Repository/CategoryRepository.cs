@@ -24,9 +24,20 @@ namespace Infrastructure.Repository
 
         public async Task<Category> GetByCategoryIdAsync(string categoryId)
         {
+            Category rtn = default;
+
             var query = "SELECT * FROM Categories WHERE IsDeleted = 0 AND Id = @CategoryId";
 
-            return await _connection.QueryFirstOrDefaultAsync<Category>(query, new { CategoryId = categoryId });
+            try
+            {
+                rtn = await _connection.QueryFirstOrDefaultAsync<Category>(query, new { CategoryId = categoryId });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return rtn;
         }
     }
 }

@@ -4,11 +4,13 @@ using Application.Logic.CategoryService;
 using Application.Logic.UserService;
 using Application.Logic.ProductService;
 using Application.Logic.SubCategoryService;
-using Application.Logic.TableService;
 using Infrastructure.Repository.Interface;
 using Infrastructure.Repository;
 using Infrastructure.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
+using Application.Logic.ProductVariantService;
+using Application.Logic.CartService;
+using Application.Logic.CartItemService;
 
 public static class ServiceRegistration
 {
@@ -20,9 +22,6 @@ public static class ServiceRegistration
 
         services.AddScoped<IAuthService, AuthService>();
 
-        services.AddScoped<ITableRepository, TableRepository>();
-        services.AddScoped<ITableService, TableService>();
-
         services.AddScoped<ICategoryRepository, CategoryRepository>();
         services.AddScoped<ICategoryService, CategoryService>();
 
@@ -31,6 +30,15 @@ public static class ServiceRegistration
 
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IProductService, ProductService>();
+
+        services.AddScoped<IProductVariantRepository, ProductVariantRepository>();
+        services.AddScoped<IProductVariantService, ProductVariantService>();
+
+        services.AddScoped<ICartRepository, CartRepository>();
+        services.AddScoped<ICartService, CartService>();
+
+        services.AddScoped<ICartItemRepository, CartItemRepository>();
+        services.AddScoped<ICartItemService, CartItemService>();
 
         services.AddScoped<TokenService>();
         services.AddScoped<IUnit, Unit>();

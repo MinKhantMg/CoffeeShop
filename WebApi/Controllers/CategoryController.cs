@@ -44,10 +44,26 @@ public class CategoryController : ControllerBase
     }
 
     /// <summary>
+    /// Select the Category
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [AllowAnonymous]
+    [HttpPost("select")]
+    public IActionResult SelectCategory(string id)
+    {
+        if (id == null )
+            return BadRequest("Invalid category ID.");
+
+        // You can store the category ID in session, local storage, or return it in response
+        return Ok(new { result = id});
+    }
+
+    /// <summary>
     /// Retrieves all Categories
     /// </summary>
     /// <returns>Return a list of catagories</returns>
- 
+    [AllowAnonymous]
     [HttpGet("all")]
     public async Task<IActionResult> GetAll()
     {
@@ -62,10 +78,10 @@ public class CategoryController : ControllerBase
     /// <param name="id"></param>
     /// <returns></returns>
     [HttpGet("{id}")]
-    public async Task<IActionResult> Get(string id)
+    public async Task<Category> Get(string id)
     {
         Category category = await _service.GetById(id);
-        return Ok(new { category });
+        return  category;
     }
 
     /// <summary>

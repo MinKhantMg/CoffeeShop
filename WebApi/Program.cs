@@ -11,7 +11,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowBlazor", policy =>
     {
-        policy.WithOrigins("https://localhost:7253") // Change to your Blazor URL
+        policy.WithOrigins("https://localhost:7253")
               .AllowAnyMethod()
               .AllowAnyHeader()
               .AllowCredentials();
@@ -92,8 +92,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-// Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 

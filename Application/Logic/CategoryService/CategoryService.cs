@@ -50,7 +50,8 @@ namespace Application.Logic.CategoryService
             if (id == null)
                 throw new Exception("Category record does not exist.");
 
-            return await _categoryRepository.GetByCategoryIdAsync(id);
+            var rtn = await _categoryRepository.GetByCategoryIdAsync(id);
+            return rtn;
 
         }
 
@@ -68,8 +69,6 @@ namespace Application.Logic.CategoryService
 
         public async Task<int> SoftDelete(string id)
         {
-            //var adminUserId = user?.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "admin123";
-
             var category = await GetById(id);
             int result = await _genericRepository.SoftDelete(category);
             return result;

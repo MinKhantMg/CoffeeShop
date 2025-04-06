@@ -18,11 +18,25 @@
             <param name="tokenRequest"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.Controllers.CartItemController.Create(Application.Dto.CartItemDTO.CartItemDto)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.Controllers.CategoryController.Create(Application.Dto.CategoryDTO.CategoryAddDto)">
             <summary>
             Create Category
             </summary>
             <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.CategoryController.SelectCategory(System.String)">
+            <summary>
+            Select the Category
+            </summary>
+            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:WebApi.Controllers.CategoryController.GetAll">
@@ -64,7 +78,7 @@
             <summary>
             Retrieves all Products
             </summary>
-            <returns>Return a list of Sub Catagories</returns>
+            <returns>Return a list of Products</returns>
         </member>
         <member name="M:WebApi.Controllers.ProductController.Get(System.String)">
             <summary>
@@ -91,6 +105,48 @@
         <member name="M:WebApi.Controllers.ProductController.Delete(System.String)">
             <summary>
             Delete Product By Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ProductVariantController.Create(Application.Dto.ProductVariantDTO.ProductVariantDto)">
+            <summary>
+            Create ProductVariant By ProductId
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ProductVariantController.GetAll">
+            <summary>
+            Retrieves all ProductVariants
+            </summary>
+            <returns>Return a list of ProductVariants</returns>
+        </member>
+        <member name="M:WebApi.Controllers.ProductVariantController.Get(System.String)">
+            <summary>
+            Get ProductVariant By Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ProductVariantController.GetByCategoryId(System.String)">
+            <summary>
+            Get ProductVariant By ProductId
+            </summary>
+            <param name="productId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ProductVariantController.Update(System.String,Application.Dto.ProductVariantDTO.ProductVariantDto)">
+            <summary>
+            Update ProductVariant By Id
+            </summary>
+            <param name="id"></param>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.ProductVariantController.Delete(System.String)">
+            <summary>
+            Delete ProductVariant By Id
             </summary>
             <param name="id"></param>
             <returns></returns>
@@ -133,41 +189,6 @@
         <member name="M:WebApi.Controllers.SubCategoryController.Delete(System.String)">
             <summary>
             Delete SubCategory By Id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.Controllers.TableController.Create(Application.Dto.TableDTO.TableDto)">
-            <summary>
-            Create Table
-            </summary>
-            <param name="dto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.Controllers.TableController.GetAll">
-            <summary>
-            Retrieves all Tables
-            </summary>
-            <returns>Return a list of catagories</returns>
-        </member>
-        <member name="M:WebApi.Controllers.TableController.Get(System.String)">
-            <summary>
-            Get Table By Id
-            </summary>
-            <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.Controllers.TableController.Update(System.String,Application.Dto.TableDTO.TableDto)">
-            <summary>
-            Update Table By Id
-            </summary>
-            <param name="id"></param>
-            <param name="dto"></param>
-            <returns></returns>
-        </member>
-        <member name="M:WebApi.Controllers.TableController.Delete(System.String)">
-            <summary>
-            Delete Table By Id
             </summary>
             <param name="id"></param>
             <returns></returns>

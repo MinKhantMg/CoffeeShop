@@ -12,6 +12,6 @@ namespace Domain.Contracts
     [Table("Products")]
     public class Product : BaseEntity<string>
     {
-        public string? SubCategoryId { get; set; }
+        public string SubCategoryId { get; set; }
     }
 }

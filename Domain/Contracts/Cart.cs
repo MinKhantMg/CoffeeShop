@@ -8,9 +8,9 @@ using Domain.Base;
 
 namespace Domain.Contracts
 {
-    [Table("Tables")]
-    public class Table : BaseEntity<string>
+    [Table("Carts")]
+    public class Cart : BaseEntity<string>
     {
-
+      
     }
 }

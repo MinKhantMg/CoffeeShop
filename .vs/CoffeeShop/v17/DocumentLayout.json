@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\webapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\webapi\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C444541-B817-4015-BE0F-EEA1CE183F2E}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\dto\\productdto\\productadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\dto\\productdto\\productadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\dto\\cartdto\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\dto\\cartdto\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\logic\\cartservice\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\logic\\cartservice\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\logic\\cartservice\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\logic\\cartservice\\icartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,27 +35,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCwAAAA+AAAAAAAAAA==",
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\Controllers\\CartController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T16:52:11.729Z",
+              "WhenOpened": "2025-04-06T07:56:34.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ICartService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\CartService\\ICartService.cs",
+              "RelativeDocumentMoniker": "Application\\Logic\\CartService\\ICartService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\CartService\\ICartService.cs",
+              "RelativeToolTip": "Application\\Logic\\CartService\\ICartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-06T07:55:26.572Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductAddDto.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Dto\\ProductDTO\\ProductAddDto.cs",
-              "RelativeDocumentMoniker": "Application\\Dto\\ProductDTO\\ProductAddDto.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Dto\\ProductDTO\\ProductAddDto.cs",
-              "RelativeToolTip": "Application\\Dto\\ProductDTO\\ProductAddDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CartDto.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Dto\\CartDTO\\CartDto.cs",
+              "RelativeDocumentMoniker": "Application\\Dto\\CartDTO\\CartDto.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Dto\\CartDTO\\CartDto.cs",
+              "RelativeToolTip": "Application\\Dto\\CartDTO\\CartDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T16:49:36.842Z",
+              "WhenOpened": "2025-04-05T20:48:27.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\CartService\\CartService.cs",
+              "RelativeDocumentMoniker": "Application\\Logic\\CartService\\CartService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\CartService\\CartService.cs",
+              "RelativeToolTip": "Application\\Logic\\CartService\\CartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-05T20:47:53.435Z",
               "EditorCaption": ""
             }
           ]

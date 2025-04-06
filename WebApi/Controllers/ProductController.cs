@@ -42,7 +42,8 @@ namespace WebApi.Controllers
         /// <summary>
         /// Retrieves all Products
         /// </summary>
-        /// <returns>Return a list of Sub Catagories</returns>
+        /// <returns>Return a list of Products</returns>
+        [AllowAnonymous]
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
