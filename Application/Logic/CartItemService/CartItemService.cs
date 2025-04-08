@@ -42,7 +42,7 @@ namespace Application.Logic.CartItemService
             var cartItem = _mapper.Map<CartItem>(dto);
             cartItem.Id = Guid.NewGuid().ToString().ToUpper();
             cartItem.CreatedOn = DateTime.UtcNow;
-            cartItem.Price = productVariant.Price * dto.Quantity;
+            cartItem.Price = productVariant.Price;
 
             int result = await _genericRepository.Add(cartItem);
             return result;
@@ -81,11 +81,8 @@ namespace Application.Logic.CartItemService
             if (productVariant == null)
                 throw new Exception("Invalid ProductVariant selected");
 
-            // First update the quantity
             cartItem.Quantity = quantity;
-
-            // Then calculate the new price based on updated quantity
-            cartItem.Price = productVariant.Price * cartItem.Quantity;
+            cartItem.Price = productVariant.Price;
 
             return await _cartItemRepository.UpdateItemQuantityAsync(cartItem.Id, cartItem.Quantity, cartItem.Price);
         }

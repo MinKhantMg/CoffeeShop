@@ -70,11 +70,11 @@ namespace WebApi.Controllers
         /// <param name="subCategoryId"></param>
         /// <returns></returns>
         [AllowAnonymous]
-        [HttpGet("subcategories/{subCategoryId}")]
-        public async Task<IActionResult> GetByCategoryId(string subCategoryId)
+        [HttpGet("all/{subCategoryId}")]
+        public async Task<IEnumerable<Product>> GetByCategoryId(string subCategoryId)
         {
             var products = await _service.GetBySubCategoryId(subCategoryId);
-            return Ok(new { products });
+            return products;
         }
 
         /// <summary>

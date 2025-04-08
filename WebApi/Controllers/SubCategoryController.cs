@@ -71,10 +71,10 @@ namespace WebApi.Controllers
         /// <returns></returns>
         [AllowAnonymous]
         [HttpGet("all/{categoryId}")]
-        public async Task<IActionResult> GetByCategoryId(string categoryId)
+        public async Task<IEnumerable<SubCategory>> GetByCategoryId(string categoryId)
         {
             var subCategory = await _service.GetByCategoryId(categoryId);
-            return Ok(new { subCategory });
+            return subCategory;
         }
 
         /// <summary>

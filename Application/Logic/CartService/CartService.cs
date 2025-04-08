@@ -17,14 +17,12 @@ namespace Application.Logic.CartService
     {
         private readonly IUnit _unit;
         private readonly IGenericRepository<Cart, string> _genericRepository;
-       // private readonly ICartRepository _cartRepository;
         private readonly IMapper _mapper;
 
         public CartService(IUnit unit, IMapper mapper)
         {
             _unit = unit;
             _genericRepository = _unit.GetRepository<Cart, string>();
-            //_cartRepository = cartRepository;
             _mapper = mapper;
         }
 
@@ -33,7 +31,7 @@ namespace Application.Logic.CartService
             var cart = _mapper.Map<Cart>(dto);
             cart.Id = Guid.NewGuid().ToString().ToUpper();
             cart.CreatedOn = DateTime.UtcNow;
-            cart.Status = true;
+            //cart.Status = true;
             int result = await _genericRepository.Add(cart);
             return result;
         }
@@ -47,15 +45,6 @@ namespace Application.Logic.CartService
             return rtn;
 
         }
-
-        //public async Task<int> Update(string id, Cart dto)
-        //{
-        //    var cart = await GetById(id);
-        //    cart.Status = false;
-        //    int cartUpdated = await _genericRepository.Update(cart);
-        //    return cartUpdated;
-        //}
-
         public async Task<int> SoftDelete(string id)
         {
             var cart = await GetById(id);

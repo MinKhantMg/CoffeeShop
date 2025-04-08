@@ -15,8 +15,6 @@ namespace Application.Logic.CartService
 
         Task<Cart> GetById(string id);
 
-        //Task<int> Update(string id, Cart dto);
-
         Task<int> SoftDelete(string id);
 
         Task<int> CountAll();

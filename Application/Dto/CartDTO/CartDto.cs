@@ -1,13 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using Domain.Contracts;
 
-namespace Application.Dto.CartDTO
+namespace Application.Dto.CartDTO;
+
+public class CartDto
 {
-    public class CartDto
+    public bool Status { get; set; }
+}
+
+public class CartDtoProfile : Profile
+{
+    public CartDtoProfile()
     {
-        public bool Status { get; set; }
+        CreateMap<CartDto, Cart>();
     }
 }

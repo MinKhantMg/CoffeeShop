@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Application.Logic.ProductVariantService;
 using Application.Logic.CartService;
 using Application.Logic.CartItemService;
+using Application.Logic.OrderService;
+using Infrastructure.GenericRepository;
 
 public static class ServiceRegistration
 {
@@ -39,6 +41,12 @@ public static class ServiceRegistration
 
         services.AddScoped<ICartItemRepository, CartItemRepository>();
         services.AddScoped<ICartItemService, CartItemService>();
+
+        services.AddScoped<IOrderRepository, OrderRepository>();
+        services.AddScoped<IOrderService, OrderService>();
+
+        services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+        services.AddScoped<IPaymentRepository, PaymentRepository>();
 
         services.AddScoped<TokenService>();
         services.AddScoped<IUnit, Unit>();

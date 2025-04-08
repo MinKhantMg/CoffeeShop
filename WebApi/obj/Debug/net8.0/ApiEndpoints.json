@@ -254,6 +254,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebApi.Controllers.OrderController",
+    "Method": "CreateOrder",
+    "RelativePath": "order/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dto.OrderDTO.CreateOrderDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.OrderController",
+    "Method": "GetOrderSummary",
+    "RelativePath": "order/summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebApi.Controllers.ProductController",
     "Method": "Create",
     "RelativePath": "product",
@@ -335,7 +367,7 @@
   {
     "ContainingType": "WebApi.Controllers.ProductController",
     "Method": "GetByCategoryId",
-    "RelativePath": "product/subcategories/{subCategoryId}",
+    "RelativePath": "product/all/{subCategoryId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -346,7 +378,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Domain.Contracts.Product, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApi.Controllers.ProductVariantController",
@@ -430,7 +472,7 @@
   {
     "ContainingType": "WebApi.Controllers.ProductVariantController",
     "Method": "GetByCategoryId",
-    "RelativePath": "productvariant/products/{productId}",
+    "RelativePath": "productvariant/all/{productId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -441,7 +483,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Domain.Contracts.ProductVariant, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApi.Controllers.SubCategoryController",
@@ -536,7 +588,17 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Domain.Contracts.SubCategory, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApi.Controllers.UserController",
