@@ -58,10 +58,10 @@ namespace WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(string id)
+        public async Task<Product> Get(string id)
         {
             Product product = await _service.GetById(id);
-            return Ok(new { product });
+            return product;
         }
 
         /// <summary>

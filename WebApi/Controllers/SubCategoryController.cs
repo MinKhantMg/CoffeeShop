@@ -58,10 +58,10 @@ namespace WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(string id)
+        public async Task<SubCategory> Get(string id)
         {
             SubCategory subCategory = await _service.GetById(id);
-            return Ok(new { subCategory });
+            return subCategory;
         }
 
         /// <summary>
