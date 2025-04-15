@@ -18,11 +18,32 @@
             <param name="tokenRequest"></param>
             <returns></returns>
         </member>
-        <member name="M:WebApi.Controllers.CartItemController.Create(Application.Dto.CartItemDTO.CartItemDto)">
+        <member name="M:WebApi.Controllers.CartController.GetCartAsync(System.String)">
             <summary>
             
             </summary>
+            <param name="cartId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.CartItemController.Create(Application.Dto.CartItemDTO.CartItemDto)">
+            <summary>
+            Create CartItem
+            </summary>
             <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.CartItemController.GetCartItemsById(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="cartId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.CartItemController.AdjustQuantity(Application.Dto.CartItemDTO.AdjustCartItemDto)">
+            <summary>
+            
+            </summary>
+            <param name="request"></param>
             <returns></returns>
         </member>
         <member name="M:WebApi.Controllers.CategoryController.Create(Application.Dto.CategoryDTO.CategoryAddDto)">

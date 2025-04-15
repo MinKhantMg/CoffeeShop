@@ -22,7 +22,6 @@ namespace Infrastructure.Repository
 
             var result = await _connection.ExecuteAsync(query, dto);
 
-            // Return the DTO if the insert was successful, else null
             return result > 0 ? dto : null;
         }
 

@@ -11,7 +11,7 @@ namespace Application.Logic.CartService
 {
     public interface ICartService
     {
-        Task<int> Create(CartDto dto);
+        Task<Cart> Create(CartDto dto);
 
         Task<Cart> GetById(string id);
 

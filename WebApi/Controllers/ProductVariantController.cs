@@ -44,10 +44,27 @@ namespace WebApi.Controllers
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-            var productVariant = (await _service.GetAll()).ToList();
-            int totalItems = await _service.CountAll();
-            return Ok(new { productVariant, totalItems });
+            try
+            {
+                var productVariant = (await _service.GetAll()).ToList();
+                int totalItems = await _service.CountAll();
+
+                // Ensure ImageUrl is correctly mapped (for Blazor UI)
+                foreach (var pv in productVariant)
+                {
+                    if (!string.IsNullOrEmpty(pv.ImageUrl) && !pv.ImageUrl.StartsWith("http"))
+                        pv.ImageUrl = $"/uploads/{pv.ImageUrl}";
+                }
+
+                return Ok(new { productVariant, totalItems });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetAll ProductVariants: " + ex.Message);
+                return StatusCode(500, "Server error: " + ex.Message);
+            }
         }
+
 
         /// <summary>
         /// Get ProductVariant By Id

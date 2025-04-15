@@ -26,14 +26,14 @@ namespace Application.Logic.CartService
             _mapper = mapper;
         }
 
-        public async Task<int> Create(CartDto dto)
+        public async Task<Cart> Create(CartDto dto)
         {
             var cart = _mapper.Map<Cart>(dto);
             cart.Id = Guid.NewGuid().ToString().ToUpper();
             cart.CreatedOn = DateTime.UtcNow;
             //cart.Status = true;
             int result = await _genericRepository.Add(cart);
-            return result;
+            return result > 0 ? cart : null!;
         }
 
         public async Task<Cart> GetById(string id)

@@ -9,8 +9,13 @@ namespace Infrastructure.Repository.Interface
 {
     public interface ICartItemRepository
     {
+        Task<CartItem> GetByCartItemIdAsync(string cartItemId);
+
         Task<IEnumerable<CartItem>> GetCartItemsByCartIdAsync(string cartId);
 
-        Task<int> UpdateItemQuantityAsync(string cartItemId, int quantity, decimal price);
+        Task<CartItem?> GetCartItemByCartIdAndVariantIdAsync(string cartId, string productVariantId);
+
+        Task<int> UpdateItemQuantityAsync(string cartItemId, int quantity, int price, int subTotal);
+
     }
 }

@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text;
 using Domain.Database;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -101,6 +102,8 @@ app.UseAuthorization();
 app.UseCors("AllowBlazor");
 
 app.MapControllers();
+
+app.UseStaticFiles();
 
 using (var scope = app.Services.CreateScope()) 
 {

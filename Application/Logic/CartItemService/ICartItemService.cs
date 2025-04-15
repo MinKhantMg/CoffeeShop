@@ -12,14 +12,13 @@ namespace Application.Logic.CartItemService
 {
     public interface ICartItemService
     {
-
-        Task<int> Create(CartItemDto dto);
+        Task<CartItemSummaryDto> Create(CartItemDto dto);
 
         Task<CartItem> GetById(string id);
 
-        Task<IEnumerable<CartItem>> GetCartItemsByCartIdAsync(string cartId);
+        Task<CartItemSummaryDto> GetCartItemsByCartIdAsync(string id);
 
-        Task<int> Update(string id, int quantity);
+        Task<CartItemSummaryDto> AdjustQuantityAsync(string id, int adjustment);
 
         Task<int> SoftDelete(string id);    
 

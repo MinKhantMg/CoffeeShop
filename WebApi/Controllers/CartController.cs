@@ -21,14 +21,20 @@ namespace WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateCartAsync([FromBody] CartDto cart)
         {
-            int cartCreated = await _service.Create(cart);
-           
-            if (cartCreated > 0)
-                return Created("", new { result = (cartCreated > 0) });
+            var cartCreated = await _service.Create(cart);
+
+            if (cartCreated != null)
+                return Created("", cartCreated);
             else
                 return StatusCode(500, "Failed to create cart.");
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cartId"></param>
+        /// <returns></returns>
         [HttpGet("{cartId}")]
         public async Task<IActionResult> GetCartAsync(string cartId)
         {

@@ -73,6 +73,7 @@ C:\Users\PC\Desktop\CoffeeShop\WebApi\obj\Debug\net8.0\WebApi.genruntimeconfig.c
 C:\Users\PC\Desktop\CoffeeShop\WebApi\obj\Debug\net8.0\ref\WebApi.dll
 C:\Users\PC\Desktop\Cafe\CoffeeShop\WebApi\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\PC\Desktop\Cafe\CoffeeShop\WebApi\bin\Debug\net8.0\appsettings.json
+C:\Users\PC\Desktop\Cafe\CoffeeShop\WebApi\bin\Debug\net8.0\WebApi.staticwebassets.runtime.json
 C:\Users\PC\Desktop\Cafe\CoffeeShop\WebApi\bin\Debug\net8.0\WebApi.staticwebassets.endpoints.json
 C:\Users\PC\Desktop\Cafe\CoffeeShop\WebApi\bin\Debug\net8.0\WebApi.exe
 C:\Users\PC\Desktop\Cafe\CoffeeShop\WebApi\bin\Debug\net8.0\WebApi.deps.json

@@ -12,27 +12,42 @@ namespace WebApi.Controllers
     {
         private readonly ICartItemService _service;
 
-        public CartItemController(ICartItemService service) 
+        public CartItemController(ICartItemService service)
         {
             _service = service;
         }
 
         /// <summary>
-        /// 
+        /// Create CartItem
         /// </summary>
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CartItemDto dto)
         {
-            int cartItem = await _service.Create(dto);
+            if (dto == null)
+                return BadRequest("Cart item data is required.");
 
-            if (cartItem > 0)
-                return Created("", new { result = (cartItem > 0) });
-            else
-                return StatusCode(500, "Failed to create cart.");
+            try
+            {
+                var result = await _service.Create(dto);
+
+                if (result is not null)
+                    return Created(string.Empty, new { result = true });
+
+                return StatusCode(500, "Failed to create cart item.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cartId"></param>
+        /// <returns></returns>
         [HttpGet("{cartId}")]
         public async Task<IActionResult> GetCartItemsById(string cartId)
         {
@@ -43,13 +58,29 @@ namespace WebApi.Controllers
             }
             return Ok(cartItem);
         }
-       
-        [HttpPut("{id}/quantity")]
-        public async Task<IActionResult> UpdateItem(string id, int quantity)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPut("adjust")]
+        public async Task<IActionResult> AdjustQuantity([FromBody] AdjustCartItemDto request)
         {
-            await _service.Update(id, quantity);
-            return NoContent();
+            if (request == null || string.IsNullOrEmpty(request.Id))
+                return BadRequest("Invalid request");
+
+            try
+            {
+                var result = await _service.AdjustQuantityAsync(request.Id, request.Quantity);
+                return Ok(result); // or return NoContent() if you don't want to send back the result
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteItem(string id)

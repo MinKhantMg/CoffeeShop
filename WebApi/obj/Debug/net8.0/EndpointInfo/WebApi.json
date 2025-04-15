@@ -107,10 +107,12 @@
         "tags": [
           "Cart"
         ],
+        "summary": "",
         "parameters": [
           {
             "name": "cartId",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "string"
@@ -149,7 +151,7 @@
         "tags": [
           "CartItem"
         ],
-        "summary": "",
+        "summary": "Create CartItem",
         "requestBody": {
           "description": "",
           "content": {
@@ -182,10 +184,12 @@
         "tags": [
           "CartItem"
         ],
+        "summary": "",
         "parameters": [
           {
             "name": "cartId",
             "in": "path",
+            "description": "",
             "required": true,
             "schema": {
               "type": "string"
@@ -199,29 +203,32 @@
         }
       }
     },
-    "/cartitem/{id}/quantity": {
+    "/cartitem/adjust": {
       "put": {
         "tags": [
           "CartItem"
         ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "quantity",
-            "in": "query",
-            "schema": {
-              "type": "integer",
-              "format": "int32"
+        "summary": "",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdjustCartItemDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdjustCartItemDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdjustCartItemDto"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -432,6 +439,23 @@
               "type": "string"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/category/summary": {
+      "get": {
+        "tags": [
+          "Category"
         ],
         "responses": {
           "200": {
@@ -1160,6 +1184,38 @@
         }
       }
     },
+    "/upload/image": {
+      "post": {
+        "tags": [
+          "Upload"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "file": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/user/register": {
       "post": {
         "tags": [
@@ -1196,6 +1252,20 @@
   },
   "components": {
     "schemas": {
+      "AdjustCartItemDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "AuthResponse": {
         "type": "object",
         "properties": {
@@ -1454,8 +1524,8 @@
             "nullable": true
           },
           "price": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1480,8 +1550,8 @@
             "nullable": true
           },
           "price": {
-            "type": "number",
-            "format": "double",
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },

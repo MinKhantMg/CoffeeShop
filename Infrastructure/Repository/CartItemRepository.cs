@@ -15,16 +15,40 @@ namespace Infrastructure.Repository
     {
         public CartItemRepository(ApplicationDbContext Context) : base(Context) { }
 
+        public async Task<CartItem> GetByCartItemIdAsync(string cartItemId)
+        {
+            CartItem rtn = default;
+
+            var query = "SELECT * FROM CartItems WHERE IsDeleted = 0 AND Id = @CartItemId";
+
+            try
+            {
+                rtn = await _connection.QueryFirstOrDefaultAsync<CartItem>(query, new { CartItemId = cartItemId });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return rtn;
+        }
+
         public async Task<IEnumerable<CartItem>> GetCartItemsByCartIdAsync(string cartId)
         {
-            string query = "SELECT * FROM CartItems WHERE CartId = @CartId";
+            string query = "SELECT * FROM CartItems WHERE CartId = @CartId AND  IsDeleted = 0";
             return await _connection.QueryAsync<CartItem>(query, new { CartId = cartId });
         }
 
-        public async Task<int> UpdateItemQuantityAsync(string cartItemId, int quantity, decimal price)
+        public async Task<CartItem?> GetCartItemByCartIdAndVariantIdAsync(string cartId, string productVariantId)
         {
-            string query = "UPDATE CartItems SET Quantity = @Quantity , Price = @Price WHERE Id = @Id";
-            return await _connection.ExecuteAsync(query, new { Id = cartItemId, Quantity = quantity, Price = price });
+            var query = "SELECT * FROM CartItems WHERE CartId = @CartId AND ProductVariantId = @ProductVariantId AND IsDeleted = 0";
+            return await _connection.QueryFirstOrDefaultAsync<CartItem>(query, new { CartId = cartId, ProductVariantId = productVariantId });
+        }
+
+        public async Task<int> UpdateItemQuantityAsync(string cartItemId, int quantity, int price, int subTotal)
+        {
+            string query = "UPDATE CartItems SET Quantity = @Quantity , Price = @Price , SubTotal = @SubTotal WHERE Id = @Id";
+            return await _connection.ExecuteAsync(query, new { Id = cartItemId, Quantity = quantity, Price = price, SubTotal = subTotal });
         }
     }
 }

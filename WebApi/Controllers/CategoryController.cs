@@ -1,6 +1,9 @@
 ﻿using System.ComponentModel;
 using Application.Dto.CategoryDTO;
 using Application.Logic.CategoryService;
+using Application.Logic.ProductService;
+using Application.Logic.ProductVariantService;
+using Application.Logic.SubCategoryService;
 using Application.Logic.UserService;
 using AutoMapper.Execution;
 using Domain.Contracts;
@@ -18,10 +21,16 @@ namespace WebApi.Controllers;
 public class CategoryController : ControllerBase
 {
     private readonly ICategoryService _service;
+    private readonly ISubCategoryService _subCategoryService;
+    private readonly IProductService _productService;
+    private readonly IProductVariantService _productVariantService;
 
-    public CategoryController(ICategoryService service)
+    public CategoryController(ICategoryService service, ISubCategoryService subCategoryService, IProductService productService, IProductVariantService productVariantService)
     {
         _service = service;
+        _subCategoryService = subCategoryService;
+        _productService = productService;
+        _productVariantService = productVariantService;
     }
 
     /// <summary>
@@ -84,6 +93,26 @@ public class CategoryController : ControllerBase
         return  category;
     }
 
+    [HttpGet("summary")]
+    public async Task<IActionResult> GetAdminSummary()
+    {
+        var categoryCount = await _service.CountAll();
+        var subcategoryCount = await _subCategoryService.CountAll();
+        var productCount = await _productService.CountAll();
+        var productVariantCount = await _productVariantService.CountAll();
+
+        var summary = new
+        {
+            Categories = categoryCount,
+            Subcategories = subcategoryCount,
+            Products = productCount,
+            ProductVariants = productVariantCount
+        };
+
+        return Ok(summary);
+    }
+
+
     /// <summary>
     /// Update Category By Id
     /// </summary>
@@ -94,6 +123,11 @@ public class CategoryController : ControllerBase
     public async Task<IActionResult> Update(string id, [FromBody] CategoryAddDto dto)
     {
         var user = HttpContext.User;
+        if (string.IsNullOrWhiteSpace(dto.Name))
+        {
+            return BadRequest("Category name is required");
+        }
+
         int categoryEdited = await _service.Update(id, dto, user);
         return Ok(new { result = (categoryEdited > 0) });
     }

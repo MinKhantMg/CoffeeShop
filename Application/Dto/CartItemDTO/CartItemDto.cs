@@ -16,8 +16,6 @@ public class CartItemDto
     public string ProductVariantId { get; set; }
 
     public int Quantity { get; set; }
-
-   // public decimal Price { get; set; }
 }
 
 public class CartItemDtoProfile : Profile
