@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
 using Domain.Contracts;
 using Domain.Database;
 using Infrastructure.GenericRepository;
@@ -13,5 +14,19 @@ namespace Infrastructure.Repository
     public class OrderRepository : GenericRepository<Order, string>, IOrderRepository
     {
         public OrderRepository(ApplicationDbContext Context) : base(Context) { }
+
+        public async Task<IEnumerable<Order>> GetAllIsPendingAsync()
+        {
+            var query = "SELECT * FROM Orders WHERE OrderStatus = 'Pending'";
+
+            return await _connection.QueryAsync<Order>(query);
+        }
+
+        public async Task<IEnumerable<Order>> GetAllIsConfirmAsync()
+        {
+            var query = "SELECT * FROM Orders WHERE OrderStatus = 'Confirmed'";
+
+            return await _connection.QueryAsync<Order>(query);
+        }
     }
 }

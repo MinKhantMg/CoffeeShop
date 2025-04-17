@@ -469,33 +469,14 @@
         ]
       }
     },
-    "/order/summary": {
-      "get": {
-        "tags": [
-          "Order"
-        ],
-        "parameters": [
-          {
-            "name": "cartId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/order/create": {
       "post": {
         "tags": [
           "Order"
         ],
+        "summary": "",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -514,6 +495,114 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/order/preview-summary": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrderDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/order/generate-receipt/{orderId}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "summary": "",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/order/confirm/{orderId}": {
+      "put": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [ ]
+          }
+        ]
+      }
+    },
+    "/order/pending": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/order/confirm": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -1389,6 +1478,10 @@
             "nullable": true
           },
           "paymentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderType": {
             "type": "string",
             "nullable": true
           }

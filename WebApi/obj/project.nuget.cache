@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LEvcP0CgMtA=",
+  "dgSpecHash": "BOPjU+PJsOQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
@@ -34,6 +34,7 @@
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.6.1\\microsoft.identitymodel.tokens.8.6.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
+    "C:\\Users\\PC\\.nuget\\packages\\questpdf\\2025.4.0\\questpdf.2025.4.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\riok.mapperly\\3.6.0\\riok.mapperly.3.6.0.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.6\\sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\sqlitepclraw.core\\2.1.6\\sqlitepclraw.core.2.1.6.nupkg.sha512",

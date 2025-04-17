@@ -1,6 +1,5 @@
-﻿using System.Net.Http.Json;
+﻿using Application.Dto.CartItemDTO;
 using Application.Dto.OrderDTO;
-using AutoMapper;
 using Domain.Contracts;
 using Infrastructure.GenericRepository;
 using Infrastructure.Repository;
@@ -16,48 +15,155 @@ namespace Application.Logic.OrderService
         private readonly ICartItemRepository _cartItemRepository;
         private readonly IOrderItemRepository _orderItemRepository;
         private readonly IPaymentRepository _paymentRepository;
+        private readonly IProductVariantRepository _productVariantRepository;
+        private readonly IOrderRepository _orderRepository;
 
-        public OrderService(IUnit unit, ICartItemRepository cartItemRepository,
-                        IOrderItemRepository orderItemRepository, IPaymentRepository paymentRepository)
+        public OrderService(IUnit unit, ICartItemRepository cartItemRepository, IOrderItemRepository orderItemRepository, IOrderRepository orderRepository,
+                            IPaymentRepository paymentRepository, IProductVariantRepository productVariantRepository)
         {
             _unit = unit;
             _genericRepository = _unit.GetRepository<Order, string>();
             _cartItemRepository = cartItemRepository;
             _orderItemRepository = orderItemRepository;
             _paymentRepository = paymentRepository;
+            _productVariantRepository = productVariantRepository;
+            _orderRepository = orderRepository;
         }
 
-        public async Task<OrderSummaryDto> GetOrderSummary(string cartId)
+        public async Task<List<CartItemDisplayDto>> GetCartItems(string cartId)
         {
-            // Fetch cart data from local storage or database
             var cartItems = await _cartItemRepository.GetCartItemsByCartIdAsync(cartId);
 
-            // Calculate total amount for the order
-            decimal totalAmount = cartItems.Sum(item => item.Price * item.Quantity);
-
-            return new OrderSummaryDto
+            var displayItems = new List<CartItemDisplayDto>();
+            foreach (var item in cartItems)
             {
-                CartItems = cartItems,
+                var variant = await _productVariantRepository.GetByIdAsync(item.ProductVariantId);
+                displayItems.Add(new CartItemDisplayDto
+                {
+                    ProductVariantId = item.ProductVariantId,
+                    Quantity = item.Quantity,
+                    Price = item.Price,
+                    SubTotal = item.Quantity * item.Price,
+                    ProductVariantName = variant?.Name,
+                    ImageUrl = variant?.ImageUrl
+                });
+            }
+
+            return displayItems;
+        }
+
+        public async Task<OrderReceipt> GetOrderSummaryByOrderId(string orderId)
+        {
+            var order = await GetById(orderId);
+            if (order == null) return null;
+
+            var orderItems = await _orderItemRepository.GetItemsByOrderIdAsync(orderId);
+            var displayItems = new List<CartItemDisplayDto>();
+
+            foreach (var item in orderItems)
+            {
+                var variant = await _productVariantRepository.GetByIdAsync(item.ProductVariantId);
+
+                displayItems.Add(new CartItemDisplayDto
+                {
+                    ProductVariantId = item.ProductVariantId,
+                    Quantity = item.Quantity,
+                    Price = item.Price,
+                    SubTotal = item.Quantity * item.Price,
+                    ProductVariantName = variant?.Name,
+                    ImageUrl = variant?.ImageUrl
+                });
+            }
+
+            int totalAmount = displayItems.Sum(x => x.SubTotal);
+
+            return new OrderReceipt
+            {
+                Id = order.Id,
+                OrderStatus = order.OrderStatus,
+                CreatedOn = order.CreatedOn,
+                OrderType = order.OrderType,
+                PaymentType = order.PaymentType,
+                CartItems = displayItems,
                 TotalAmount = totalAmount
             };
         }
 
-        public async Task<OrderDto> CreateOrder(string cartId, string paymentType)
+        public async Task<bool> ConfirmOrder(string orderId)
+        {
+            var order = await _genericRepository.Get(orderId);
+            if (order == null) throw new Exception("Order not found.");
+
+            if (order.OrderStatus != "Pending")
+                throw new Exception("Only pending orders can be confirmed.");
+
+            order.OrderStatus = "Confirmed";
+            order.CreatedOn = order.CreatedOn;
+
+            await _genericRepository.Update(order);
+
+            return true;
+        }
+
+        public async Task<IEnumerable<Order>> GetConfirmOrdersAsync()
+        {
+            var result = await _orderRepository.GetAllIsConfirmAsync();
+
+            return result;
+        }
+
+        public async Task<IEnumerable<Order>> GetPendingOrdersAsync()
+        {
+            var result = await _orderRepository.GetAllIsPendingAsync();
+
+            return result;
+        }
+
+
+        //public async Task<OrderReceipt> ConfirmOrder(string orderId)
+        //{
+        //    var order = await _genericRepository.Get(orderId);
+        //    if (order == null) throw new Exception("Order not found.");
+
+        //    if (order.OrderStatus != "Pending")
+        //        throw new Exception("Only pending orders can be confirmed.");
+
+        //    order.OrderStatus = "Confirmed";
+
+        //    await _genericRepository.Update(order);
+
+        //    return new OrderReceipt
+        //    {
+        //        Id = order.Id,
+        //        OrderStatus = order.OrderStatus,
+        //        CartItems = order.Car.ToList()
+        //    };
+
+
+        public async Task<Order> GetById(string id)
+        {
+            if (id == null)
+                throw new Exception("Category record does not exist.");
+
+            var rtn = await _genericRepository.Get(id);
+            return rtn;
+        }
+
+        public async Task<OrderDto> CreateOrder(string cartId, string paymentType, string orderType)
         {
             var cartItems = await _cartItemRepository.GetCartItemsByCartIdAsync(cartId);
             var totalAmount = cartItems.Sum(item => item.Price * item.Quantity);
 
-            // Create Order
             var order = new Order
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString().ToUpper(),
                 TotalAmount = totalAmount,
                 OrderStatus = "Pending",
                 CreatedOn = DateTime.UtcNow,
                 PaymentType = paymentType,
+                OrderType = orderType,
                 IsDeleted = false
             };
-
 
             await _genericRepository.Add(order);
 
@@ -93,6 +199,7 @@ namespace Application.Logic.OrderService
                 Id = order.Id,
                 TotalAmount = totalAmount,
                 OrderStatus = "Pending",
+                OrderType = orderType,
                 PaymentType = paymentType
             };
 

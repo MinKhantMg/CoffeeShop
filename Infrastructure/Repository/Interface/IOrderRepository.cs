@@ -10,5 +10,8 @@ namespace Infrastructure.Repository.Interface
 {
     public interface IOrderRepository : IGenericRepository<Order, string>
     {
+        Task<IEnumerable<Order>> GetAllIsPendingAsync();
+
+        Task<IEnumerable<Order>> GetAllIsConfirmAsync();
     }
 }

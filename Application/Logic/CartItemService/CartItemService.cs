@@ -69,7 +69,7 @@ namespace Application.Logic.CartItemService
             var cartItems = await _cartItemRepository.GetCartItemsByCartIdAsync(dto.CartId);
 
             var displayItems = new List<CartItemDisplayDto>();
-            decimal totalAmount = 0;
+            int totalAmount = 0;
 
             foreach (var item in cartItems)
             {
@@ -273,7 +273,7 @@ namespace Application.Logic.CartItemService
             var cartItems = await _cartItemRepository.GetCartItemsByCartIdAsync(cartItem.CartId);
 
             var displayItems = new List<CartItemDisplayDto>();
-            decimal totalAmount = 0;
+            int totalAmount = 0;
 
             foreach (var item in cartItems)
             {

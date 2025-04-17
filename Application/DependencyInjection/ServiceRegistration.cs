@@ -50,5 +50,7 @@ public static class ServiceRegistration
 
         services.AddScoped<TokenService>();
         services.AddScoped<IUnit, Unit>();
+        services.AddScoped<PdfService>();
+
     }
 }

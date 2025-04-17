@@ -11,5 +11,7 @@ namespace Infrastructure.Repository.Interface
     public interface IOrderItemRepository : IGenericRepository<OrderItem, string>
     {
         Task<OrderItem> CreateOrderItem(OrderItem dto);
+
+        Task<IEnumerable<OrderItem>> GetItemsByOrderIdAsync(string orderId);
     }
 }

@@ -25,5 +25,11 @@ namespace Infrastructure.Repository
             return result > 0 ? dto : null;
         }
 
+        public async Task<IEnumerable<OrderItem>> GetItemsByOrderIdAsync(string orderId)
+        {
+            var sql = "SELECT * FROM OrderItems WHERE OrderId = @OrderId AND IsDeleted = 0";
+            return await _connection.QueryAsync<OrderItem>(sql, new { OrderId = orderId });
+        }
+
     }
 }

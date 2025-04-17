@@ -88,6 +88,27 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.Controllers.OrderController.CreateOrder(Application.Dto.OrderDTO.CreateOrderDto)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.OrderController.PreviewOrderSummary(Application.Dto.OrderDTO.CreateOrderDto)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controllers.OrderController.GenerateOrderReceipt(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.Controllers.ProductController.Create(Application.Dto.ProductDTO.ProductAddDto)">
             <summary>
             Create Product By SubCategoryId

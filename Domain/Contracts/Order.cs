@@ -12,9 +12,11 @@ namespace Domain.Contracts
     [Table("Orders")]
     public class Order : BaseEntity<string>
     {
-        public decimal TotalAmount { get; set; }
+        public int TotalAmount { get; set; }
 
         public string OrderStatus { get; set; } = Enum.GetName(typeof(OrderStatus), Enums.OrderStatus.Pending)!;
+
+        public string OrderType { get; set; }
 
         public string PaymentType { get; set; } = Enum.GetName(typeof(PaymentType), Enums.PaymentType.Cash)!;
 

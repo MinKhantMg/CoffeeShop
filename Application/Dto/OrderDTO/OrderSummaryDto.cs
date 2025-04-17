@@ -10,7 +10,9 @@ namespace Application.Dto.OrderDTO
 {
     public class OrderSummaryDto
     {
-        public IEnumerable<CartItem> CartItems { get; set; }
-        public decimal TotalAmount { get; set; }
+        public string OrderType { get; set; }
+        public string PaymentType { get; set; }
+        public int TotalAmount { get; set; }
+        public List<OrderItemDto> Items { get; set; }
     }
 }

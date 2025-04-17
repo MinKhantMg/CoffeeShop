@@ -12,9 +12,6 @@ namespace Application.Dto.UserDTO;
 
 public class UserRegistrationDto 
 {
-
-    //public Guid Id { get; set; }
-
     public string Name { get; set; }
 
     public string? PhoneNumber { get; set; } = default!;

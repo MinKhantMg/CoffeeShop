@@ -260,6 +260,32 @@
   },
   {
     "ContainingType": "WebApi.Controllers.OrderController",
+    "Method": "GetConfirmOrder",
+    "RelativePath": "order/confirm",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.OrderController",
+    "Method": "ConfirmOrder",
+    "RelativePath": "order/confirm/{orderId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.OrderController",
     "Method": "CreateOrder",
     "RelativePath": "order/create",
     "HttpMethod": "POST",
@@ -276,16 +302,42 @@
   },
   {
     "ContainingType": "WebApi.Controllers.OrderController",
-    "Method": "GetOrderSummary",
-    "RelativePath": "order/summary",
+    "Method": "GenerateOrderReceipt",
+    "RelativePath": "order/generate-receipt/{orderId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cartId",
+        "Name": "orderId",
         "Type": "System.String",
-        "IsRequired": false
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.OrderController",
+    "Method": "GetPendingOrder",
+    "RelativePath": "order/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.OrderController",
+    "Method": "PreviewOrderSummary",
+    "RelativePath": "order/preview-summary",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Application.Dto.OrderDTO.CreateOrderDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
