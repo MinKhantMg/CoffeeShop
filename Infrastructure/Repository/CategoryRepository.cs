@@ -17,7 +17,7 @@ namespace Infrastructure.Repository
 
         public async Task<IEnumerable<Category>> GetAllIsDeletetedAsync()
         {
-            var query = "SELECT * FROM Categories WHERE IsDeleted = 0";
+            var query = "SELECT * FROM Categories WHERE IsDeleted = 0 ORDER BY CreatedOn DESC";
 
             return await _connection.QueryAsync<Category>(query);
         }

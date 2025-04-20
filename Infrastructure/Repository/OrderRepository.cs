@@ -17,14 +17,14 @@ namespace Infrastructure.Repository
 
         public async Task<IEnumerable<Order>> GetAllIsPendingAsync()
         {
-            var query = "SELECT * FROM Orders WHERE OrderStatus = 'Pending'";
+            var query = "SELECT * FROM Orders WHERE OrderStatus = 'Pending' ORDER BY CreatedOn DESC";
 
             return await _connection.QueryAsync<Order>(query);
         }
 
         public async Task<IEnumerable<Order>> GetAllIsConfirmAsync()
         {
-            var query = "SELECT * FROM Orders WHERE OrderStatus = 'Confirmed'";
+            var query = "SELECT * FROM Orders WHERE OrderStatus = 'Confirmed' ORDER BY CreatedOn DESC";
 
             return await _connection.QueryAsync<Order>(query);
         }

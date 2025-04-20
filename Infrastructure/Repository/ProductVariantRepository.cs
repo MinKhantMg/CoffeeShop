@@ -17,7 +17,7 @@ namespace Infrastructure.Repository
 
         public async Task<IEnumerable<ProductVariant>> GetAllIsDeletetedAsync()
         {
-            var query = "SELECT * FROM ProductVariants WHERE IsDeleted = 0";
+            var query = "SELECT * FROM ProductVariants WHERE IsDeleted = 0 ORDER BY CreatedOn DESC";
 
             return await _connection.QueryAsync<ProductVariant>(query);
         }

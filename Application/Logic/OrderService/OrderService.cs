@@ -119,27 +119,6 @@ namespace Application.Logic.OrderService
             return result;
         }
 
-
-        //public async Task<OrderReceipt> ConfirmOrder(string orderId)
-        //{
-        //    var order = await _genericRepository.Get(orderId);
-        //    if (order == null) throw new Exception("Order not found.");
-
-        //    if (order.OrderStatus != "Pending")
-        //        throw new Exception("Only pending orders can be confirmed.");
-
-        //    order.OrderStatus = "Confirmed";
-
-        //    await _genericRepository.Update(order);
-
-        //    return new OrderReceipt
-        //    {
-        //        Id = order.Id,
-        //        OrderStatus = order.OrderStatus,
-        //        CartItems = order.Car.ToList()
-        //    };
-
-
         public async Task<Order> GetById(string id)
         {
             if (id == null)
