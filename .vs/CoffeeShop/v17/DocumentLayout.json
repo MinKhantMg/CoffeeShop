@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Application\\Logic\\AuthService\\AuthService.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\AuthService\\AuthService.cs",
               "RelativeToolTip": "Application\\Logic\\AuthService\\AuthService.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwB4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-20T20:39:49.902Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "RelativeToolTip": "Application\\Logic\\UserService\\UserService.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T20:39:36.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T20:39:36.874Z"
             },
             {
               "$type": "Document",
@@ -80,8 +79,7 @@
               "RelativeToolTip": "Infrastructure\\Repository\\UserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T20:39:32.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T20:39:32.622Z"
             },
             {
               "$type": "Document",
@@ -93,8 +91,7 @@
               "RelativeToolTip": "Infrastructure\\Repository\\ProductVariantRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T19:59:58.255Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T19:59:58.255Z"
             },
             {
               "$type": "Document",
@@ -106,8 +103,7 @@
               "RelativeToolTip": "Infrastructure\\Repository\\ProductRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T19:59:51.382Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T19:59:51.382Z"
             },
             {
               "$type": "Document",
@@ -119,8 +115,7 @@
               "RelativeToolTip": "Application\\Logic\\OrderService\\OrderService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T19:54:20.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T19:54:20.186Z"
             },
             {
               "$type": "Document",
@@ -132,8 +127,7 @@
               "RelativeToolTip": "Infrastructure\\Repository\\OrderRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T19:52:05.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T19:52:05.161Z"
             }
           ]
         }

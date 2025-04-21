@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\logic\\orderservice\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\logic\\orderservice\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\logic\\authservice\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\logic\\authservice\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\logic\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\logic\\userservice\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\infrastructure\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\infrastructure\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\application\\logic\\orderservice\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F23895D-6354-4A47-A790-9C455ABE4697}|Application\\Application.csproj|solutionrelative:application\\logic\\orderservice\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\infrastructure\\repository\\productvariantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repository\\productvariantrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|c:\\users\\pc\\desktop\\cafe\\coffeeshop\\infrastructure\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{007E9AE2-2562-4604-9C73-CA50C11654C1}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,28 +47,87 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrderService.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\OrderService\\OrderService.cs",
-              "RelativeDocumentMoniker": "Application\\Logic\\OrderService\\OrderService.cs",
-              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\OrderService\\OrderService.cs*",
-              "RelativeToolTip": "Application\\Logic\\OrderService\\OrderService.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHgAAAAAAAAAAAAAAA==",
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\AuthService\\AuthService.cs",
+              "RelativeDocumentMoniker": "Application\\Logic\\AuthService\\AuthService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\AuthService\\AuthService.cs",
+              "RelativeToolTip": "Application\\Logic\\AuthService\\AuthService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwB4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T19:54:20.186Z",
+              "WhenOpened": "2025-04-20T20:39:49.902Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\UserService\\UserService.cs",
+              "RelativeDocumentMoniker": "Application\\Logic\\UserService\\UserService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\UserService\\UserService.cs",
+              "RelativeToolTip": "Application\\Logic\\UserService\\UserService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T20:39:36.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repository\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\UserRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repository\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T20:39:32.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductVariantRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\ProductVariantRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repository\\ProductVariantRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\ProductVariantRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repository\\ProductVariantRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T19:59:58.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T19:59:51.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\OrderService\\OrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Logic\\OrderService\\OrderService.cs",
+              "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Application\\Logic\\OrderService\\OrderService.cs",
+              "RelativeToolTip": "Application\\Logic\\OrderService\\OrderService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwHgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T19:54:20.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repository\\OrderRepository.cs",
               "ToolTip": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\Infrastructure\\Repository\\OrderRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repository\\OrderRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T19:52:05.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T19:52:05.161Z"
             }
           ]
         }
