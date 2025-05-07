@@ -17,6 +17,8 @@ namespace Domain.Contracts
 
         public string? Description { get; set; }
 
+        public int? Calorie { get; set; }
+
         public int Price { get; set; }
     }
 }

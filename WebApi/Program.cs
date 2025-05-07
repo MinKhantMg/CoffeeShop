@@ -99,6 +99,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseStaticFiles();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -106,7 +108,7 @@ app.UseCors("AllowBlazor");
 
 app.MapControllers();
 
-app.UseStaticFiles();
+
 
 using (var scope = app.Services.CreateScope()) 
 {

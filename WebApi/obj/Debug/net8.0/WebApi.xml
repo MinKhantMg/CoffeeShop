@@ -73,6 +73,12 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:WebApi.Controllers.CategoryController.GetAdminSummary">
+            <summary>
+            Get Summary of the Category
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:WebApi.Controllers.CategoryController.Update(System.String,Application.Dto.CategoryDTO.CategoryAddDto)">
             <summary>
             Update Category By Id

@@ -17,8 +17,6 @@ namespace Domain.Contracts
 
         public int SubTotal { get; set; }
 
-        public int TotalPrice { get; set; }
-
         public string CartId { get; set; }
 
         public string ProductVariantId { get; set; }

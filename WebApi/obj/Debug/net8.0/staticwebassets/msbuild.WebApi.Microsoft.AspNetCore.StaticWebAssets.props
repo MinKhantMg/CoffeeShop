@@ -1,58 +1,76 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0a9521f7-9256-4d75-8664-b06480833004.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\732205ba-76b4-4eb0-a482-290f19923bd6.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>WebApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/WebApi</BasePath>
-      <RelativePath>uploads/0a9521f7-9256-4d75-8664-b06480833004.jpg</RelativePath>
+      <RelativePath>uploads/732205ba-76b4-4eb0-a482-290f19923bd6.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>4aayisljcp</Fingerprint>
-      <Integrity>jLpq9GgyXgoqJjaYhqPjjmYdLXd2LdcYDMK0DyL9CSg=</Integrity>
+      <Fingerprint>q3ag4s5iu2</Fingerprint>
+      <Integrity>2iRCLfzzpK2bMn6O06eppaHBXBG1zdBx/5zcTkcg82U=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\0a9521f7-9256-4d75-8664-b06480833004.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\732205ba-76b4-4eb0-a482-290f19923bd6.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5baccd2c-481f-4caf-bd0e-36fe739c54da.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a334d91e-c293-4d9d-87f6-6a00d11af72b.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>WebApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/WebApi</BasePath>
-      <RelativePath>uploads/5baccd2c-481f-4caf-bd0e-36fe739c54da.jpg</RelativePath>
+      <RelativePath>uploads/a334d91e-c293-4d9d-87f6-6a00d11af72b.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>gwfav9sw8b</Fingerprint>
-      <Integrity>AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=</Integrity>
+      <Fingerprint>3bw5d6fcy4</Fingerprint>
+      <Integrity>MdjfWrypjEiKWK4wq/dsAXCoa/MSEAVsZ4EAthS/5dQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5baccd2c-481f-4caf-bd0e-36fe739c54da.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\a334d91e-c293-4d9d-87f6-6a00d11af72b.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5fdd9a83-8efe-4bf6-818e-023b4ae5d5fd.jpg'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ade15583-1deb-48f4-8ee5-3e753bccf558.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>WebApi</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/WebApi</BasePath>
-      <RelativePath>uploads/5fdd9a83-8efe-4bf6-818e-023b4ae5d5fd.jpg</RelativePath>
+      <RelativePath>uploads/ade15583-1deb-48f4-8ee5-3e753bccf558.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>tu5ejv8yu0</Fingerprint>
-      <Integrity>JeT1s6lpPcJK0b+vhxy3QAXz1mjQCM2FmBV0XiBg58M=</Integrity>
+      <Fingerprint>3bw5d6fcy4</Fingerprint>
+      <Integrity>MdjfWrypjEiKWK4wq/dsAXCoa/MSEAVsZ4EAthS/5dQ=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\5fdd9a83-8efe-4bf6-818e-023b4ae5d5fd.jpg'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\ade15583-1deb-48f4-8ee5-3e753bccf558.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d5d5f527-7b9b-49ec-ab27-144c247b2f0b.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebApi</BasePath>
+      <RelativePath>uploads/d5d5f527-7b9b-49ec-ab27-144c247b2f0b.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>q3ag4s5iu2</Fingerprint>
+      <Integrity>2iRCLfzzpK2bMn6O06eppaHBXBG1zdBx/5zcTkcg82U=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\uploads\d5d5f527-7b9b-49ec-ab27-144c247b2f0b.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

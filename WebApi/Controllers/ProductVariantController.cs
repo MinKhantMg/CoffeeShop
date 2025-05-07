@@ -103,6 +103,7 @@ namespace WebApi.Controllers
             var user = HttpContext.User;
             int productVariantEdited = await _service.Update(id, dto, user);
             return Ok(new { result = (productVariantEdited > 0) });
+        
         }
 
         /// <summary>

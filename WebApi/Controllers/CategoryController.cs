@@ -93,6 +93,10 @@ public class CategoryController : ControllerBase
         return  category;
     }
 
+    /// <summary>
+    /// Get Summary of the Category
+    /// </summary>
+    /// <returns></returns>
     [HttpGet("summary")]
     public async Task<IActionResult> GetAdminSummary()
     {

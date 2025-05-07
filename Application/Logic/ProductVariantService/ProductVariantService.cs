@@ -61,6 +61,10 @@ namespace Application.Logic.ProductVariantService
 
             var productVariant = await GetById(id);
             productVariant.Name = dto.Name;
+            productVariant.ImageUrl = dto.ImageUrl;
+            productVariant.Description = dto.Description;
+            productVariant.Calorie = dto.Calorie;
+            productVariant.Price = dto.Price;
             productVariant.ProductId = dto.ProductId;
             productVariant.LastModifiedBy = adminUserId;
             productVariant.LastModifiedOn = DateTime.UtcNow;

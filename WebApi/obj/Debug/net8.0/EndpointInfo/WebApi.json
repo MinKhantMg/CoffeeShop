@@ -457,6 +457,7 @@
         "tags": [
           "Category"
         ],
+        "summary": "Get Summary of the Category",
         "responses": {
           "200": {
             "description": "OK"
@@ -1278,6 +1279,15 @@
         "tags": [
           "Upload"
         ],
+        "parameters": [
+          {
+            "name": "existingFileName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -1616,6 +1626,11 @@
             "type": "string",
             "nullable": true
           },
+          "calorie": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
           "price": {
             "type": "integer",
             "format": "int32"
@@ -1642,10 +1657,14 @@
             "type": "string",
             "nullable": true
           },
-          "price": {
+          "calorie": {
             "type": "integer",
             "format": "int32",
             "nullable": true
+          },
+          "price": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
