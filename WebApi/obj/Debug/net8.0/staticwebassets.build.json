@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "PzGRwRLRkVz1GKmEfZIp/kQ2wqmffQCWt/2GbFG9J0M=",
+  "Hash": "/w62kYzMIPpChsKmEHd6pEao8kNTQWMw8yHcYHoRoGw=",
   "Source": "WebApi",
   "BasePath": "_content/WebApi",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/6e37081d-448f-4c4a-afd9-ae606eb60c1f#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gwfav9sw8b",
+      "Integrity": "AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg"
+    },
     {
       "Identity": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\732205ba-76b4-4eb0-a482-290f19923bd6.jpg",
       "SourceId": "WebApi",
@@ -36,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\732205ba-76b4-4eb0-a482-290f19923bd6.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/948af00a-f5f1-40c1-95a7-d4f64ccf4141#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gwfav9sw8b",
+      "Integrity": "AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg"
     },
     {
       "Identity": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\a334d91e-c293-4d9d-87f6-6a00d11af72b.jpg",
@@ -80,6 +122,48 @@
       "OriginalItemSpec": "wwwroot\\uploads\\ade15583-1deb-48f4-8ee5-3e753bccf558.jpg"
     },
     {
+      "Identity": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/c289ec7c-3a58-4fde-beed-b0a19ffb61db#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gwfav9sw8b",
+      "Integrity": "AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c46747ad-70e7-48b3-a891-55a4c44621ce.jpg",
+      "SourceId": "WebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\",
+      "BasePath": "_content/WebApi",
+      "RelativePath": "uploads/c46747ad-70e7-48b3-a891-55a4c44621ce#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gwfav9sw8b",
+      "Integrity": "AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\c46747ad-70e7-48b3-a891-55a4c44621ce.jpg"
+    },
+    {
       "Identity": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\d5d5f527-7b9b-49ec-ab27-144c247b2f0b.jpg",
       "SourceId": "WebApi",
       "SourceType": "Discovered",
@@ -102,6 +186,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "uploads/6e37081d-448f-4c4a-afd9-ae606eb60c1f.gwfav9sw8b.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 12:31:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gwfav9sw8b"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 12:31:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
+        }
+      ]
+    },
     {
       "Route": "uploads/732205ba-76b4-4eb0-a482-290f19923bd6.jpg",
       "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\732205ba-76b4-4eb0-a482-290f19923bd6.jpg",
@@ -181,6 +347,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-2iRCLfzzpK2bMn6O06eppaHBXBG1zdBx/5zcTkcg82U="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/948af00a-f5f1-40c1-95a7-d4f64ccf4141.gwfav9sw8b.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 20:02:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gwfav9sw8b"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 20:02:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
         }
       ]
     },
@@ -345,6 +593,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-MdjfWrypjEiKWK4wq/dsAXCoa/MSEAVsZ4EAthS/5dQ="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c289ec7c-3a58-4fde-beed-b0a19ffb61db.gwfav9sw8b.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 12:33:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gwfav9sw8b"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 12:33:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c46747ad-70e7-48b3-a891-55a4c44621ce.gwfav9sw8b.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c46747ad-70e7-48b3-a891-55a4c44621ce.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 20:13:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gwfav9sw8b"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/c46747ad-70e7-48b3-a891-55a4c44621ce.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/c46747ad-70e7-48b3-a891-55a4c44621ce.jpg",
+      "AssetFile": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c46747ad-70e7-48b3-a891-55a4c44621ce.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133007"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 07 May 2025 20:13:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AHITiAid2uw0XJZoaJLAzqjTFmo0NBXbIiHzMawJp1E="
         }
       ]
     },

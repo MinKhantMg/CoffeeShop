@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg",
+      "PackagePath": "staticwebassets\\uploads\\6e37081d-448f-4c4a-afd9-ae606eb60c1f.jpg"
+    },
+    {
       "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\732205ba-76b4-4eb0-a482-290f19923bd6.jpg",
       "PackagePath": "staticwebassets\\uploads\\732205ba-76b4-4eb0-a482-290f19923bd6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg",
+      "PackagePath": "staticwebassets\\uploads\\948af00a-f5f1-40c1-95a7-d4f64ccf4141.jpg"
     },
     {
       "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\a334d91e-c293-4d9d-87f6-6a00d11af72b.jpg",
@@ -11,6 +19,14 @@
     {
       "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\ade15583-1deb-48f4-8ee5-3e753bccf558.jpg",
       "PackagePath": "staticwebassets\\uploads\\ade15583-1deb-48f4-8ee5-3e753bccf558.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c289ec7c-3a58-4fde-beed-b0a19ffb61db.jpg"
+    },
+    {
+      "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\c46747ad-70e7-48b3-a891-55a4c44621ce.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c46747ad-70e7-48b3-a891-55a4c44621ce.jpg"
     },
     {
       "Id": "C:\\Users\\PC\\Desktop\\Cafe\\CoffeeShop\\WebApi\\wwwroot\\uploads\\d5d5f527-7b9b-49ec-ab27-144c247b2f0b.jpg",
